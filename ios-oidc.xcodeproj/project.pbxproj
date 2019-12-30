@@ -1,0 +1,1210 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		58D2D25823BA2765008DC877 /* ios_oidc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D2D24E23BA2765008DC877 /* ios_oidc.framework */; };
+		58D2D25D23BA2765008DC877 /* ios_oidcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D25C23BA2765008DC877 /* ios_oidcTests.swift */; };
+		58D2D25F23BA2765008DC877 /* ios_oidc.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D25123BA2765008DC877 /* ios_oidc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D2E223BA2FE4008DC877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D2E123BA2FE4008DC877 /* AppDelegate.swift */; };
+		58D2D2E423BA2FE4008DC877 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D2E323BA2FE4008DC877 /* SceneDelegate.swift */; };
+		58D2D2E623BA2FE4008DC877 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D2E523BA2FE4008DC877 /* ViewController.swift */; };
+		58D2D2E923BA2FE4008DC877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58D2D2E723BA2FE4008DC877 /* Main.storyboard */; };
+		58D2D2EB23BA2FE5008DC877 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58D2D2EA23BA2FE5008DC877 /* Assets.xcassets */; };
+		58D2D2EE23BA2FE5008DC877 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58D2D2EC23BA2FE5008DC877 /* LaunchScreen.storyboard */; };
+		58D2D2F923BA2FE5008DC877 /* ios_oidc_testerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D2F823BA2FE5008DC877 /* ios_oidc_testerTests.swift */; };
+		58D2D30423BA2FE5008DC877 /* ios_oidc_testerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D30323BA2FE5008DC877 /* ios_oidc_testerUITests.swift */; };
+		58D2D35623BA3563008DC877 /* OIDAuthState.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D31323BA3560008DC877 /* OIDAuthState.m */; };
+		58D2D35723BA3563008DC877 /* OIDEndSessionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D31423BA3560008DC877 /* OIDEndSessionResponse.m */; };
+		58D2D35823BA3563008DC877 /* OIDServiceConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D31523BA3560008DC877 /* OIDServiceConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D35923BA3563008DC877 /* OIDExternalUserAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D31623BA3560008DC877 /* OIDExternalUserAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D35A23BA3563008DC877 /* OIDTokenUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D31723BA3560008DC877 /* OIDTokenUtilities.m */; };
+		58D2D35B23BA3563008DC877 /* OIDEndSessionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D31823BA3560008DC877 /* OIDEndSessionRequest.m */; };
+		58D2D35C23BA3563008DC877 /* OIDScopes.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D31923BA3560008DC877 /* OIDScopes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D35D23BA3563008DC877 /* OIDExternalUserAgentIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D31B23BA3560008DC877 /* OIDExternalUserAgentIOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D35E23BA3563008DC877 /* OIDAuthState+IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D31C23BA3560008DC877 /* OIDAuthState+IOS.m */; };
+		58D2D35F23BA3563008DC877 /* OIDAuthorizationService+IOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D31D23BA3560008DC877 /* OIDAuthorizationService+IOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D36023BA3563008DC877 /* OIDExternalUserAgentIOSCustomBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D31E23BA3560008DC877 /* OIDExternalUserAgentIOSCustomBrowser.m */; };
+		58D2D36123BA3563008DC877 /* OIDExternalUserAgentCatalyst.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D31F23BA3560008DC877 /* OIDExternalUserAgentCatalyst.m */; };
+		58D2D36223BA3563008DC877 /* OIDAuthorizationService+IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D32023BA3560008DC877 /* OIDAuthorizationService+IOS.m */; };
+		58D2D36323BA3563008DC877 /* OIDAuthState+IOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D32123BA3560008DC877 /* OIDAuthState+IOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D36423BA3563008DC877 /* OIDExternalUserAgentIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D32223BA3560008DC877 /* OIDExternalUserAgentIOS.m */; };
+		58D2D36523BA3563008DC877 /* OIDExternalUserAgentIOSCustomBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D32323BA3560008DC877 /* OIDExternalUserAgentIOSCustomBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D36623BA3563008DC877 /* OIDExternalUserAgentCatalyst.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D32423BA3560008DC877 /* OIDExternalUserAgentCatalyst.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D36723BA3563008DC877 /* OIDIDToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D32523BA3560008DC877 /* OIDIDToken.m */; };
+		58D2D36823BA3563008DC877 /* OIDGrantTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D32623BA3560008DC877 /* OIDGrantTypes.m */; };
+		58D2D36923BA3563008DC877 /* OIDURLSessionProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D32723BA3560008DC877 /* OIDURLSessionProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D36A23BA3563008DC877 /* OIDClientMetadataParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D32823BA3560008DC877 /* OIDClientMetadataParameters.m */; };
+		58D2D36B23BA3563008DC877 /* OIDAuthorizationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D32923BA3560008DC877 /* OIDAuthorizationResponse.m */; };
+		58D2D36C23BA3563008DC877 /* OIDErrorUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D32A23BA3561008DC877 /* OIDErrorUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D36D23BA3563008DC877 /* OIDDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D32B23BA3561008DC877 /* OIDDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D36E23BA3563008DC877 /* OIDServiceDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D32C23BA3561008DC877 /* OIDServiceDiscovery.m */; };
+		58D2D36F23BA3563008DC877 /* OIDScopes.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D32D23BA3561008DC877 /* OIDScopes.m */; };
+		58D2D37023BA3563008DC877 /* OIDTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D32E23BA3561008DC877 /* OIDTokenRequest.m */; };
+		58D2D37123BA3563008DC877 /* OIDError.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D32F23BA3561008DC877 /* OIDError.m */; };
+		58D2D37223BA3563008DC877 /* OIDScopeUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D33023BA3561008DC877 /* OIDScopeUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D37323BA3563008DC877 /* OIDRegistrationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D33123BA3561008DC877 /* OIDRegistrationRequest.m */; };
+		58D2D37423BA3563008DC877 /* OIDFieldMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D33223BA3561008DC877 /* OIDFieldMapping.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D37523BA3563008DC877 /* OIDAuthStateChangeDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D33323BA3561008DC877 /* OIDAuthStateChangeDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D37623BA3563008DC877 /* OIDURLSessionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D33423BA3561008DC877 /* OIDURLSessionProvider.m */; };
+		58D2D37723BA3563008DC877 /* OIDResponseTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D33523BA3561008DC877 /* OIDResponseTypes.m */; };
+		58D2D37823BA3563008DC877 /* OIDAuthStateErrorDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D33623BA3561008DC877 /* OIDAuthStateErrorDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D37923BA3563008DC877 /* OIDFieldMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D33723BA3561008DC877 /* OIDFieldMapping.m */; };
+		58D2D37A23BA3563008DC877 /* OIDScopeUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D33823BA3561008DC877 /* OIDScopeUtilities.m */; };
+		58D2D37B23BA3563008DC877 /* OIDURLQueryComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D33923BA3561008DC877 /* OIDURLQueryComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D37C23BA3563008DC877 /* OIDEndSessionResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D33A23BA3561008DC877 /* OIDEndSessionResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D37D23BA3563008DC877 /* OIDURLQueryComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D33B23BA3561008DC877 /* OIDURLQueryComponent.m */; };
+		58D2D37E23BA3563008DC877 /* OIDTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D33C23BA3561008DC877 /* OIDTokenResponse.m */; };
+		58D2D37F23BA3563008DC877 /* OIDExternalUserAgentRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D33D23BA3561008DC877 /* OIDExternalUserAgentRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D38023BA3563008DC877 /* OIDServiceConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D33E23BA3561008DC877 /* OIDServiceConfiguration.m */; };
+		58D2D38123BA3563008DC877 /* OIDAuthorizationRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D33F23BA3562008DC877 /* OIDAuthorizationRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D38223BA3563008DC877 /* OIDTokenUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D34023BA3562008DC877 /* OIDTokenUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D38323BA3563008DC877 /* OIDAuthorizationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D34123BA3562008DC877 /* OIDAuthorizationRequest.m */; };
+		58D2D38423BA3563008DC877 /* OIDTokenRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D34223BA3562008DC877 /* OIDTokenRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D38523BA3563008DC877 /* OIDRegistrationRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D34323BA3562008DC877 /* OIDRegistrationRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D38623BA3563008DC877 /* AppAuthCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D34423BA3562008DC877 /* AppAuthCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D38723BA3563008DC877 /* AppAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D34523BA3562008DC877 /* AppAuth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D38823BA3563008DC877 /* OIDAuthState.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D34623BA3562008DC877 /* OIDAuthState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D38923BA3563008DC877 /* OIDIDToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D34723BA3562008DC877 /* OIDIDToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D38A23BA3563008DC877 /* OIDClientMetadataParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D34823BA3562008DC877 /* OIDClientMetadataParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D38B23BA3563008DC877 /* OIDEndSessionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D34923BA3562008DC877 /* OIDEndSessionRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D38C23BA3563008DC877 /* OIDExternalUserAgentSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D34A23BA3562008DC877 /* OIDExternalUserAgentSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D38D23BA3563008DC877 /* OIDTokenResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D34B23BA3562008DC877 /* OIDTokenResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D38E23BA3563008DC877 /* OIDRegistrationResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D34C23BA3562008DC877 /* OIDRegistrationResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D38F23BA3563008DC877 /* OIDServiceDiscovery.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D34D23BA3562008DC877 /* OIDServiceDiscovery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D39023BA3563008DC877 /* OIDGrantTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D34E23BA3562008DC877 /* OIDGrantTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D39123BA3563008DC877 /* OIDAuthorizationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D34F23BA3562008DC877 /* OIDAuthorizationService.m */; };
+		58D2D39223BA3563008DC877 /* OIDRegistrationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D35023BA3563008DC877 /* OIDRegistrationResponse.m */; };
+		58D2D39323BA3563008DC877 /* OIDErrorUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D35123BA3563008DC877 /* OIDErrorUtilities.m */; };
+		58D2D39423BA3563008DC877 /* OIDError.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D35223BA3563008DC877 /* OIDError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D39523BA3563008DC877 /* OIDAuthorizationService.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D35323BA3563008DC877 /* OIDAuthorizationService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D39623BA3563008DC877 /* OIDAuthorizationResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D35423BA3563008DC877 /* OIDAuthorizationResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D39723BA3563008DC877 /* OIDResponseTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D35523BA3563008DC877 /* OIDResponseTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58D2D39923BA36C6008DC877 /* OLOidcKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D39823BA36C6008DC877 /* OLOidcKeychain.swift */; };
+		58D2D39A23BA36C6008DC877 /* OLOidcKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D39823BA36C6008DC877 /* OLOidcKeychain.swift */; };
+		58D2D39C23BA36ED008DC877 /* OLOidc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D39B23BA36ED008DC877 /* OLOidc.swift */; };
+		58D2D39D23BA36ED008DC877 /* OLOidc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D39B23BA36ED008DC877 /* OLOidc.swift */; };
+		58D2D39F23BA3707008DC877 /* OLOidcConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D39E23BA3707008DC877 /* OLOidcConfig.swift */; };
+		58D2D3A023BA3707008DC877 /* OLOidcConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D39E23BA3707008DC877 /* OLOidcConfig.swift */; };
+		58D2D3A223BA373A008DC877 /* OLOidcAuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D3A123BA373A008DC877 /* OLOidcAuthState.swift */; };
+		58D2D3A323BA373A008DC877 /* OLOidcAuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D3A123BA373A008DC877 /* OLOidcAuthState.swift */; };
+		58D2D3A523BA3802008DC877 /* OLOidcSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D3A423BA3802008DC877 /* OLOidcSessionManager.swift */; };
+		58D2D3A623BA3802008DC877 /* OLOidcSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D3A423BA3802008DC877 /* OLOidcSessionManager.swift */; };
+		58D2D3AA23BA7C74008DC877 /* ios_oidc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D2D24E23BA2765008DC877 /* ios_oidc.framework */; };
+		58D2D3AB23BA7C74008DC877 /* ios_oidc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58D2D24E23BA2765008DC877 /* ios_oidc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		58D2D25923BA2765008DC877 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58D2D24523BA2765008DC877 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58D2D24D23BA2765008DC877;
+			remoteInfo = "ios-oidc";
+		};
+		58D2D2F523BA2FE5008DC877 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58D2D24523BA2765008DC877 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58D2D2DE23BA2FE4008DC877;
+			remoteInfo = "ios-oidc-tester";
+		};
+		58D2D30023BA2FE5008DC877 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58D2D24523BA2765008DC877 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58D2D2DE23BA2FE4008DC877;
+			remoteInfo = "ios-oidc-tester";
+		};
+		58D2D3AC23BA7C74008DC877 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58D2D24523BA2765008DC877 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58D2D24D23BA2765008DC877;
+			remoteInfo = "ios-oidc";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		58D2D3AE23BA7C74008DC877 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				58D2D3AB23BA7C74008DC877 /* ios_oidc.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		58D2D24E23BA2765008DC877 /* ios_oidc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ios_oidc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58D2D25123BA2765008DC877 /* ios_oidc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_oidc.h; sourceTree = "<group>"; };
+		58D2D25223BA2765008DC877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58D2D25723BA2765008DC877 /* ios-oidcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-oidcTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58D2D25C23BA2765008DC877 /* ios_oidcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_oidcTests.swift; sourceTree = "<group>"; };
+		58D2D25E23BA2765008DC877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58D2D2DF23BA2FE4008DC877 /* ios-oidc-tester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-oidc-tester.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58D2D2E123BA2FE4008DC877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		58D2D2E323BA2FE4008DC877 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		58D2D2E523BA2FE4008DC877 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		58D2D2E823BA2FE4008DC877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		58D2D2EA23BA2FE5008DC877 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		58D2D2ED23BA2FE5008DC877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		58D2D2EF23BA2FE5008DC877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58D2D2F423BA2FE5008DC877 /* ios-oidc-testerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-oidc-testerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58D2D2F823BA2FE5008DC877 /* ios_oidc_testerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_oidc_testerTests.swift; sourceTree = "<group>"; };
+		58D2D2FA23BA2FE5008DC877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58D2D2FF23BA2FE5008DC877 /* ios-oidc-testerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-oidc-testerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58D2D30323BA2FE5008DC877 /* ios_oidc_testerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_oidc_testerUITests.swift; sourceTree = "<group>"; };
+		58D2D30523BA2FE5008DC877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58D2D31323BA3560008DC877 /* OIDAuthState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDAuthState.m; sourceTree = "<group>"; };
+		58D2D31423BA3560008DC877 /* OIDEndSessionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDEndSessionResponse.m; sourceTree = "<group>"; };
+		58D2D31523BA3560008DC877 /* OIDServiceConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDServiceConfiguration.h; sourceTree = "<group>"; };
+		58D2D31623BA3560008DC877 /* OIDExternalUserAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDExternalUserAgent.h; sourceTree = "<group>"; };
+		58D2D31723BA3560008DC877 /* OIDTokenUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDTokenUtilities.m; sourceTree = "<group>"; };
+		58D2D31823BA3560008DC877 /* OIDEndSessionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDEndSessionRequest.m; sourceTree = "<group>"; };
+		58D2D31923BA3560008DC877 /* OIDScopes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDScopes.h; sourceTree = "<group>"; };
+		58D2D31B23BA3560008DC877 /* OIDExternalUserAgentIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDExternalUserAgentIOS.h; sourceTree = "<group>"; };
+		58D2D31C23BA3560008DC877 /* OIDAuthState+IOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OIDAuthState+IOS.m"; sourceTree = "<group>"; };
+		58D2D31D23BA3560008DC877 /* OIDAuthorizationService+IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OIDAuthorizationService+IOS.h"; sourceTree = "<group>"; };
+		58D2D31E23BA3560008DC877 /* OIDExternalUserAgentIOSCustomBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDExternalUserAgentIOSCustomBrowser.m; sourceTree = "<group>"; };
+		58D2D31F23BA3560008DC877 /* OIDExternalUserAgentCatalyst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDExternalUserAgentCatalyst.m; sourceTree = "<group>"; };
+		58D2D32023BA3560008DC877 /* OIDAuthorizationService+IOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OIDAuthorizationService+IOS.m"; sourceTree = "<group>"; };
+		58D2D32123BA3560008DC877 /* OIDAuthState+IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OIDAuthState+IOS.h"; sourceTree = "<group>"; };
+		58D2D32223BA3560008DC877 /* OIDExternalUserAgentIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDExternalUserAgentIOS.m; sourceTree = "<group>"; };
+		58D2D32323BA3560008DC877 /* OIDExternalUserAgentIOSCustomBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDExternalUserAgentIOSCustomBrowser.h; sourceTree = "<group>"; };
+		58D2D32423BA3560008DC877 /* OIDExternalUserAgentCatalyst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDExternalUserAgentCatalyst.h; sourceTree = "<group>"; };
+		58D2D32523BA3560008DC877 /* OIDIDToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDIDToken.m; sourceTree = "<group>"; };
+		58D2D32623BA3560008DC877 /* OIDGrantTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDGrantTypes.m; sourceTree = "<group>"; };
+		58D2D32723BA3560008DC877 /* OIDURLSessionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDURLSessionProvider.h; sourceTree = "<group>"; };
+		58D2D32823BA3560008DC877 /* OIDClientMetadataParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDClientMetadataParameters.m; sourceTree = "<group>"; };
+		58D2D32923BA3560008DC877 /* OIDAuthorizationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDAuthorizationResponse.m; sourceTree = "<group>"; };
+		58D2D32A23BA3561008DC877 /* OIDErrorUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDErrorUtilities.h; sourceTree = "<group>"; };
+		58D2D32B23BA3561008DC877 /* OIDDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDDefines.h; sourceTree = "<group>"; };
+		58D2D32C23BA3561008DC877 /* OIDServiceDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDServiceDiscovery.m; sourceTree = "<group>"; };
+		58D2D32D23BA3561008DC877 /* OIDScopes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDScopes.m; sourceTree = "<group>"; };
+		58D2D32E23BA3561008DC877 /* OIDTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDTokenRequest.m; sourceTree = "<group>"; };
+		58D2D32F23BA3561008DC877 /* OIDError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDError.m; sourceTree = "<group>"; };
+		58D2D33023BA3561008DC877 /* OIDScopeUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDScopeUtilities.h; sourceTree = "<group>"; };
+		58D2D33123BA3561008DC877 /* OIDRegistrationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDRegistrationRequest.m; sourceTree = "<group>"; };
+		58D2D33223BA3561008DC877 /* OIDFieldMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDFieldMapping.h; sourceTree = "<group>"; };
+		58D2D33323BA3561008DC877 /* OIDAuthStateChangeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDAuthStateChangeDelegate.h; sourceTree = "<group>"; };
+		58D2D33423BA3561008DC877 /* OIDURLSessionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDURLSessionProvider.m; sourceTree = "<group>"; };
+		58D2D33523BA3561008DC877 /* OIDResponseTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDResponseTypes.m; sourceTree = "<group>"; };
+		58D2D33623BA3561008DC877 /* OIDAuthStateErrorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDAuthStateErrorDelegate.h; sourceTree = "<group>"; };
+		58D2D33723BA3561008DC877 /* OIDFieldMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDFieldMapping.m; sourceTree = "<group>"; };
+		58D2D33823BA3561008DC877 /* OIDScopeUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDScopeUtilities.m; sourceTree = "<group>"; };
+		58D2D33923BA3561008DC877 /* OIDURLQueryComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDURLQueryComponent.h; sourceTree = "<group>"; };
+		58D2D33A23BA3561008DC877 /* OIDEndSessionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDEndSessionResponse.h; sourceTree = "<group>"; };
+		58D2D33B23BA3561008DC877 /* OIDURLQueryComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDURLQueryComponent.m; sourceTree = "<group>"; };
+		58D2D33C23BA3561008DC877 /* OIDTokenResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDTokenResponse.m; sourceTree = "<group>"; };
+		58D2D33D23BA3561008DC877 /* OIDExternalUserAgentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDExternalUserAgentRequest.h; sourceTree = "<group>"; };
+		58D2D33E23BA3561008DC877 /* OIDServiceConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDServiceConfiguration.m; sourceTree = "<group>"; };
+		58D2D33F23BA3562008DC877 /* OIDAuthorizationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDAuthorizationRequest.h; sourceTree = "<group>"; };
+		58D2D34023BA3562008DC877 /* OIDTokenUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDTokenUtilities.h; sourceTree = "<group>"; };
+		58D2D34123BA3562008DC877 /* OIDAuthorizationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDAuthorizationRequest.m; sourceTree = "<group>"; };
+		58D2D34223BA3562008DC877 /* OIDTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDTokenRequest.h; sourceTree = "<group>"; };
+		58D2D34323BA3562008DC877 /* OIDRegistrationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDRegistrationRequest.h; sourceTree = "<group>"; };
+		58D2D34423BA3562008DC877 /* AppAuthCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppAuthCore.h; sourceTree = "<group>"; };
+		58D2D34523BA3562008DC877 /* AppAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppAuth.h; sourceTree = "<group>"; };
+		58D2D34623BA3562008DC877 /* OIDAuthState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDAuthState.h; sourceTree = "<group>"; };
+		58D2D34723BA3562008DC877 /* OIDIDToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDIDToken.h; sourceTree = "<group>"; };
+		58D2D34823BA3562008DC877 /* OIDClientMetadataParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDClientMetadataParameters.h; sourceTree = "<group>"; };
+		58D2D34923BA3562008DC877 /* OIDEndSessionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDEndSessionRequest.h; sourceTree = "<group>"; };
+		58D2D34A23BA3562008DC877 /* OIDExternalUserAgentSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDExternalUserAgentSession.h; sourceTree = "<group>"; };
+		58D2D34B23BA3562008DC877 /* OIDTokenResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDTokenResponse.h; sourceTree = "<group>"; };
+		58D2D34C23BA3562008DC877 /* OIDRegistrationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDRegistrationResponse.h; sourceTree = "<group>"; };
+		58D2D34D23BA3562008DC877 /* OIDServiceDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDServiceDiscovery.h; sourceTree = "<group>"; };
+		58D2D34E23BA3562008DC877 /* OIDGrantTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDGrantTypes.h; sourceTree = "<group>"; };
+		58D2D34F23BA3562008DC877 /* OIDAuthorizationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDAuthorizationService.m; sourceTree = "<group>"; };
+		58D2D35023BA3563008DC877 /* OIDRegistrationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDRegistrationResponse.m; sourceTree = "<group>"; };
+		58D2D35123BA3563008DC877 /* OIDErrorUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDErrorUtilities.m; sourceTree = "<group>"; };
+		58D2D35223BA3563008DC877 /* OIDError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDError.h; sourceTree = "<group>"; };
+		58D2D35323BA3563008DC877 /* OIDAuthorizationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDAuthorizationService.h; sourceTree = "<group>"; };
+		58D2D35423BA3563008DC877 /* OIDAuthorizationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDAuthorizationResponse.h; sourceTree = "<group>"; };
+		58D2D35523BA3563008DC877 /* OIDResponseTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDResponseTypes.h; sourceTree = "<group>"; };
+		58D2D39823BA36C6008DC877 /* OLOidcKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLOidcKeychain.swift; sourceTree = "<group>"; };
+		58D2D39B23BA36ED008DC877 /* OLOidc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLOidc.swift; sourceTree = "<group>"; };
+		58D2D39E23BA3707008DC877 /* OLOidcConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLOidcConfig.swift; sourceTree = "<group>"; };
+		58D2D3A123BA373A008DC877 /* OLOidcAuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLOidcAuthState.swift; sourceTree = "<group>"; };
+		58D2D3A423BA3802008DC877 /* OLOidcSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLOidcSessionManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58D2D24B23BA2765008DC877 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D2D25423BA2765008DC877 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58D2D25823BA2765008DC877 /* ios_oidc.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D2D2DC23BA2FE4008DC877 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58D2D3AA23BA7C74008DC877 /* ios_oidc.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D2D2F123BA2FE5008DC877 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D2D2FC23BA2FE5008DC877 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		58D2D24423BA2765008DC877 = {
+			isa = PBXGroup;
+			children = (
+				58D2D25023BA2765008DC877 /* ios-oidc */,
+				58D2D25B23BA2765008DC877 /* ios-oidcTests */,
+				58D2D2E023BA2FE4008DC877 /* ios-oidc-tester */,
+				58D2D2F723BA2FE5008DC877 /* ios-oidc-testerTests */,
+				58D2D30223BA2FE5008DC877 /* ios-oidc-testerUITests */,
+				58D2D24F23BA2765008DC877 /* Products */,
+				58D2D3A923BA7C74008DC877 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		58D2D24F23BA2765008DC877 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58D2D24E23BA2765008DC877 /* ios_oidc.framework */,
+				58D2D25723BA2765008DC877 /* ios-oidcTests.xctest */,
+				58D2D2DF23BA2FE4008DC877 /* ios-oidc-tester.app */,
+				58D2D2F423BA2FE5008DC877 /* ios-oidc-testerTests.xctest */,
+				58D2D2FF23BA2FE5008DC877 /* ios-oidc-testerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58D2D25023BA2765008DC877 /* ios-oidc */ = {
+			isa = PBXGroup;
+			children = (
+				58D2D31023BA3135008DC877 /* Oidc */,
+				58D2D30F23BA3119008DC877 /* AppAuth */,
+				58D2D25123BA2765008DC877 /* ios_oidc.h */,
+				58D2D25223BA2765008DC877 /* Info.plist */,
+			);
+			path = "ios-oidc";
+			sourceTree = "<group>";
+		};
+		58D2D25B23BA2765008DC877 /* ios-oidcTests */ = {
+			isa = PBXGroup;
+			children = (
+				58D2D25C23BA2765008DC877 /* ios_oidcTests.swift */,
+				58D2D25E23BA2765008DC877 /* Info.plist */,
+			);
+			path = "ios-oidcTests";
+			sourceTree = "<group>";
+		};
+		58D2D2E023BA2FE4008DC877 /* ios-oidc-tester */ = {
+			isa = PBXGroup;
+			children = (
+				58D2D2E123BA2FE4008DC877 /* AppDelegate.swift */,
+				58D2D2E323BA2FE4008DC877 /* SceneDelegate.swift */,
+				58D2D2E523BA2FE4008DC877 /* ViewController.swift */,
+				58D2D2E723BA2FE4008DC877 /* Main.storyboard */,
+				58D2D2EA23BA2FE5008DC877 /* Assets.xcassets */,
+				58D2D2EC23BA2FE5008DC877 /* LaunchScreen.storyboard */,
+				58D2D2EF23BA2FE5008DC877 /* Info.plist */,
+			);
+			path = "ios-oidc-tester";
+			sourceTree = "<group>";
+		};
+		58D2D2F723BA2FE5008DC877 /* ios-oidc-testerTests */ = {
+			isa = PBXGroup;
+			children = (
+				58D2D2F823BA2FE5008DC877 /* ios_oidc_testerTests.swift */,
+				58D2D2FA23BA2FE5008DC877 /* Info.plist */,
+			);
+			path = "ios-oidc-testerTests";
+			sourceTree = "<group>";
+		};
+		58D2D30223BA2FE5008DC877 /* ios-oidc-testerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				58D2D30323BA2FE5008DC877 /* ios_oidc_testerUITests.swift */,
+				58D2D30523BA2FE5008DC877 /* Info.plist */,
+			);
+			path = "ios-oidc-testerUITests";
+			sourceTree = "<group>";
+		};
+		58D2D30F23BA3119008DC877 /* AppAuth */ = {
+			isa = PBXGroup;
+			children = (
+				58D2D34523BA3562008DC877 /* AppAuth.h */,
+				58D2D34423BA3562008DC877 /* AppAuthCore.h */,
+				58D2D31A23BA3560008DC877 /* iOS */,
+				58D2D33F23BA3562008DC877 /* OIDAuthorizationRequest.h */,
+				58D2D34123BA3562008DC877 /* OIDAuthorizationRequest.m */,
+				58D2D35423BA3563008DC877 /* OIDAuthorizationResponse.h */,
+				58D2D32923BA3560008DC877 /* OIDAuthorizationResponse.m */,
+				58D2D35323BA3563008DC877 /* OIDAuthorizationService.h */,
+				58D2D34F23BA3562008DC877 /* OIDAuthorizationService.m */,
+				58D2D34623BA3562008DC877 /* OIDAuthState.h */,
+				58D2D31323BA3560008DC877 /* OIDAuthState.m */,
+				58D2D33323BA3561008DC877 /* OIDAuthStateChangeDelegate.h */,
+				58D2D33623BA3561008DC877 /* OIDAuthStateErrorDelegate.h */,
+				58D2D34823BA3562008DC877 /* OIDClientMetadataParameters.h */,
+				58D2D32823BA3560008DC877 /* OIDClientMetadataParameters.m */,
+				58D2D32B23BA3561008DC877 /* OIDDefines.h */,
+				58D2D34923BA3562008DC877 /* OIDEndSessionRequest.h */,
+				58D2D31823BA3560008DC877 /* OIDEndSessionRequest.m */,
+				58D2D33A23BA3561008DC877 /* OIDEndSessionResponse.h */,
+				58D2D31423BA3560008DC877 /* OIDEndSessionResponse.m */,
+				58D2D35223BA3563008DC877 /* OIDError.h */,
+				58D2D32F23BA3561008DC877 /* OIDError.m */,
+				58D2D32A23BA3561008DC877 /* OIDErrorUtilities.h */,
+				58D2D35123BA3563008DC877 /* OIDErrorUtilities.m */,
+				58D2D31623BA3560008DC877 /* OIDExternalUserAgent.h */,
+				58D2D33D23BA3561008DC877 /* OIDExternalUserAgentRequest.h */,
+				58D2D34A23BA3562008DC877 /* OIDExternalUserAgentSession.h */,
+				58D2D33223BA3561008DC877 /* OIDFieldMapping.h */,
+				58D2D33723BA3561008DC877 /* OIDFieldMapping.m */,
+				58D2D34E23BA3562008DC877 /* OIDGrantTypes.h */,
+				58D2D32623BA3560008DC877 /* OIDGrantTypes.m */,
+				58D2D34723BA3562008DC877 /* OIDIDToken.h */,
+				58D2D32523BA3560008DC877 /* OIDIDToken.m */,
+				58D2D34323BA3562008DC877 /* OIDRegistrationRequest.h */,
+				58D2D33123BA3561008DC877 /* OIDRegistrationRequest.m */,
+				58D2D34C23BA3562008DC877 /* OIDRegistrationResponse.h */,
+				58D2D35023BA3563008DC877 /* OIDRegistrationResponse.m */,
+				58D2D35523BA3563008DC877 /* OIDResponseTypes.h */,
+				58D2D33523BA3561008DC877 /* OIDResponseTypes.m */,
+				58D2D31923BA3560008DC877 /* OIDScopes.h */,
+				58D2D32D23BA3561008DC877 /* OIDScopes.m */,
+				58D2D33023BA3561008DC877 /* OIDScopeUtilities.h */,
+				58D2D33823BA3561008DC877 /* OIDScopeUtilities.m */,
+				58D2D31523BA3560008DC877 /* OIDServiceConfiguration.h */,
+				58D2D33E23BA3561008DC877 /* OIDServiceConfiguration.m */,
+				58D2D34D23BA3562008DC877 /* OIDServiceDiscovery.h */,
+				58D2D32C23BA3561008DC877 /* OIDServiceDiscovery.m */,
+				58D2D34223BA3562008DC877 /* OIDTokenRequest.h */,
+				58D2D32E23BA3561008DC877 /* OIDTokenRequest.m */,
+				58D2D34B23BA3562008DC877 /* OIDTokenResponse.h */,
+				58D2D33C23BA3561008DC877 /* OIDTokenResponse.m */,
+				58D2D34023BA3562008DC877 /* OIDTokenUtilities.h */,
+				58D2D31723BA3560008DC877 /* OIDTokenUtilities.m */,
+				58D2D33923BA3561008DC877 /* OIDURLQueryComponent.h */,
+				58D2D33B23BA3561008DC877 /* OIDURLQueryComponent.m */,
+				58D2D32723BA3560008DC877 /* OIDURLSessionProvider.h */,
+				58D2D33423BA3561008DC877 /* OIDURLSessionProvider.m */,
+			);
+			path = AppAuth;
+			sourceTree = "<group>";
+		};
+		58D2D31023BA3135008DC877 /* Oidc */ = {
+			isa = PBXGroup;
+			children = (
+				58D2D39823BA36C6008DC877 /* OLOidcKeychain.swift */,
+				58D2D39B23BA36ED008DC877 /* OLOidc.swift */,
+				58D2D39E23BA3707008DC877 /* OLOidcConfig.swift */,
+				58D2D3A123BA373A008DC877 /* OLOidcAuthState.swift */,
+				58D2D3A423BA3802008DC877 /* OLOidcSessionManager.swift */,
+			);
+			path = Oidc;
+			sourceTree = "<group>";
+		};
+		58D2D31A23BA3560008DC877 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				58D2D31B23BA3560008DC877 /* OIDExternalUserAgentIOS.h */,
+				58D2D31C23BA3560008DC877 /* OIDAuthState+IOS.m */,
+				58D2D31D23BA3560008DC877 /* OIDAuthorizationService+IOS.h */,
+				58D2D31E23BA3560008DC877 /* OIDExternalUserAgentIOSCustomBrowser.m */,
+				58D2D31F23BA3560008DC877 /* OIDExternalUserAgentCatalyst.m */,
+				58D2D32023BA3560008DC877 /* OIDAuthorizationService+IOS.m */,
+				58D2D32123BA3560008DC877 /* OIDAuthState+IOS.h */,
+				58D2D32223BA3560008DC877 /* OIDExternalUserAgentIOS.m */,
+				58D2D32323BA3560008DC877 /* OIDExternalUserAgentIOSCustomBrowser.h */,
+				58D2D32423BA3560008DC877 /* OIDExternalUserAgentCatalyst.h */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		58D2D3A923BA7C74008DC877 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		58D2D24923BA2765008DC877 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58D2D36D23BA3563008DC877 /* OIDDefines.h in Headers */,
+				58D2D36C23BA3563008DC877 /* OIDErrorUtilities.h in Headers */,
+				58D2D35823BA3563008DC877 /* OIDServiceConfiguration.h in Headers */,
+				58D2D37C23BA3563008DC877 /* OIDEndSessionResponse.h in Headers */,
+				58D2D39423BA3563008DC877 /* OIDError.h in Headers */,
+				58D2D25F23BA2765008DC877 /* ios_oidc.h in Headers */,
+				58D2D38823BA3563008DC877 /* OIDAuthState.h in Headers */,
+				58D2D35C23BA3563008DC877 /* OIDScopes.h in Headers */,
+				58D2D37823BA3563008DC877 /* OIDAuthStateErrorDelegate.h in Headers */,
+				58D2D38423BA3563008DC877 /* OIDTokenRequest.h in Headers */,
+				58D2D39723BA3563008DC877 /* OIDResponseTypes.h in Headers */,
+				58D2D36923BA3563008DC877 /* OIDURLSessionProvider.h in Headers */,
+				58D2D38C23BA3563008DC877 /* OIDExternalUserAgentSession.h in Headers */,
+				58D2D37B23BA3563008DC877 /* OIDURLQueryComponent.h in Headers */,
+				58D2D38123BA3563008DC877 /* OIDAuthorizationRequest.h in Headers */,
+				58D2D36523BA3563008DC877 /* OIDExternalUserAgentIOSCustomBrowser.h in Headers */,
+				58D2D37F23BA3563008DC877 /* OIDExternalUserAgentRequest.h in Headers */,
+				58D2D38723BA3563008DC877 /* AppAuth.h in Headers */,
+				58D2D39523BA3563008DC877 /* OIDAuthorizationService.h in Headers */,
+				58D2D38D23BA3563008DC877 /* OIDTokenResponse.h in Headers */,
+				58D2D37523BA3563008DC877 /* OIDAuthStateChangeDelegate.h in Headers */,
+				58D2D37423BA3563008DC877 /* OIDFieldMapping.h in Headers */,
+				58D2D38623BA3563008DC877 /* AppAuthCore.h in Headers */,
+				58D2D35D23BA3563008DC877 /* OIDExternalUserAgentIOS.h in Headers */,
+				58D2D38E23BA3563008DC877 /* OIDRegistrationResponse.h in Headers */,
+				58D2D38A23BA3563008DC877 /* OIDClientMetadataParameters.h in Headers */,
+				58D2D38F23BA3563008DC877 /* OIDServiceDiscovery.h in Headers */,
+				58D2D37223BA3563008DC877 /* OIDScopeUtilities.h in Headers */,
+				58D2D35923BA3563008DC877 /* OIDExternalUserAgent.h in Headers */,
+				58D2D39623BA3563008DC877 /* OIDAuthorizationResponse.h in Headers */,
+				58D2D38B23BA3563008DC877 /* OIDEndSessionRequest.h in Headers */,
+				58D2D38923BA3563008DC877 /* OIDIDToken.h in Headers */,
+				58D2D38523BA3563008DC877 /* OIDRegistrationRequest.h in Headers */,
+				58D2D36323BA3563008DC877 /* OIDAuthState+IOS.h in Headers */,
+				58D2D36623BA3563008DC877 /* OIDExternalUserAgentCatalyst.h in Headers */,
+				58D2D38223BA3563008DC877 /* OIDTokenUtilities.h in Headers */,
+				58D2D39023BA3563008DC877 /* OIDGrantTypes.h in Headers */,
+				58D2D35F23BA3563008DC877 /* OIDAuthorizationService+IOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		58D2D24D23BA2765008DC877 /* ios-oidc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58D2D26223BA2765008DC877 /* Build configuration list for PBXNativeTarget "ios-oidc" */;
+			buildPhases = (
+				58D2D24923BA2765008DC877 /* Headers */,
+				58D2D24A23BA2765008DC877 /* Sources */,
+				58D2D24B23BA2765008DC877 /* Frameworks */,
+				58D2D24C23BA2765008DC877 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ios-oidc";
+			productName = "ios-oidc";
+			productReference = 58D2D24E23BA2765008DC877 /* ios_oidc.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		58D2D25623BA2765008DC877 /* ios-oidcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58D2D26523BA2765008DC877 /* Build configuration list for PBXNativeTarget "ios-oidcTests" */;
+			buildPhases = (
+				58D2D25323BA2765008DC877 /* Sources */,
+				58D2D25423BA2765008DC877 /* Frameworks */,
+				58D2D25523BA2765008DC877 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58D2D25A23BA2765008DC877 /* PBXTargetDependency */,
+			);
+			name = "ios-oidcTests";
+			productName = "ios-oidcTests";
+			productReference = 58D2D25723BA2765008DC877 /* ios-oidcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		58D2D2DE23BA2FE4008DC877 /* ios-oidc-tester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58D2D30623BA2FE5008DC877 /* Build configuration list for PBXNativeTarget "ios-oidc-tester" */;
+			buildPhases = (
+				58D2D2DB23BA2FE4008DC877 /* Sources */,
+				58D2D2DC23BA2FE4008DC877 /* Frameworks */,
+				58D2D2DD23BA2FE4008DC877 /* Resources */,
+				58D2D3AE23BA7C74008DC877 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58D2D3AD23BA7C74008DC877 /* PBXTargetDependency */,
+			);
+			name = "ios-oidc-tester";
+			productName = "ios-oidc-tester";
+			productReference = 58D2D2DF23BA2FE4008DC877 /* ios-oidc-tester.app */;
+			productType = "com.apple.product-type.application";
+		};
+		58D2D2F323BA2FE5008DC877 /* ios-oidc-testerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58D2D30923BA2FE5008DC877 /* Build configuration list for PBXNativeTarget "ios-oidc-testerTests" */;
+			buildPhases = (
+				58D2D2F023BA2FE5008DC877 /* Sources */,
+				58D2D2F123BA2FE5008DC877 /* Frameworks */,
+				58D2D2F223BA2FE5008DC877 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58D2D2F623BA2FE5008DC877 /* PBXTargetDependency */,
+			);
+			name = "ios-oidc-testerTests";
+			productName = "ios-oidc-testerTests";
+			productReference = 58D2D2F423BA2FE5008DC877 /* ios-oidc-testerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		58D2D2FE23BA2FE5008DC877 /* ios-oidc-testerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58D2D30C23BA2FE5008DC877 /* Build configuration list for PBXNativeTarget "ios-oidc-testerUITests" */;
+			buildPhases = (
+				58D2D2FB23BA2FE5008DC877 /* Sources */,
+				58D2D2FC23BA2FE5008DC877 /* Frameworks */,
+				58D2D2FD23BA2FE5008DC877 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58D2D30123BA2FE5008DC877 /* PBXTargetDependency */,
+			);
+			name = "ios-oidc-testerUITests";
+			productName = "ios-oidc-testerUITests";
+			productReference = 58D2D2FF23BA2FE5008DC877 /* ios-oidc-testerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58D2D24523BA2765008DC877 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = OneLogin;
+				TargetAttributes = {
+					58D2D24D23BA2765008DC877 = {
+						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
+					};
+					58D2D25623BA2765008DC877 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					58D2D2DE23BA2FE4008DC877 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					58D2D2F323BA2FE5008DC877 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 58D2D2DE23BA2FE4008DC877;
+					};
+					58D2D2FE23BA2FE5008DC877 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 58D2D2DE23BA2FE4008DC877;
+					};
+				};
+			};
+			buildConfigurationList = 58D2D24823BA2765008DC877 /* Build configuration list for PBXProject "ios-oidc" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 58D2D24423BA2765008DC877;
+			productRefGroup = 58D2D24F23BA2765008DC877 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58D2D24D23BA2765008DC877 /* ios-oidc */,
+				58D2D25623BA2765008DC877 /* ios-oidcTests */,
+				58D2D2DE23BA2FE4008DC877 /* ios-oidc-tester */,
+				58D2D2F323BA2FE5008DC877 /* ios-oidc-testerTests */,
+				58D2D2FE23BA2FE5008DC877 /* ios-oidc-testerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		58D2D24C23BA2765008DC877 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D2D25523BA2765008DC877 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D2D2DD23BA2FE4008DC877 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58D2D2EE23BA2FE5008DC877 /* LaunchScreen.storyboard in Resources */,
+				58D2D2EB23BA2FE5008DC877 /* Assets.xcassets in Resources */,
+				58D2D2E923BA2FE4008DC877 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D2D2F223BA2FE5008DC877 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D2D2FD23BA2FE5008DC877 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58D2D24A23BA2765008DC877 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58D2D36A23BA3563008DC877 /* OIDClientMetadataParameters.m in Sources */,
+				58D2D35723BA3563008DC877 /* OIDEndSessionResponse.m in Sources */,
+				58D2D3A523BA3802008DC877 /* OLOidcSessionManager.swift in Sources */,
+				58D2D37023BA3563008DC877 /* OIDTokenRequest.m in Sources */,
+				58D2D36B23BA3563008DC877 /* OIDAuthorizationResponse.m in Sources */,
+				58D2D36123BA3563008DC877 /* OIDExternalUserAgentCatalyst.m in Sources */,
+				58D2D35E23BA3563008DC877 /* OIDAuthState+IOS.m in Sources */,
+				58D2D39223BA3563008DC877 /* OIDRegistrationResponse.m in Sources */,
+				58D2D36023BA3563008DC877 /* OIDExternalUserAgentIOSCustomBrowser.m in Sources */,
+				58D2D36223BA3563008DC877 /* OIDAuthorizationService+IOS.m in Sources */,
+				58D2D38323BA3563008DC877 /* OIDAuthorizationRequest.m in Sources */,
+				58D2D36723BA3563008DC877 /* OIDIDToken.m in Sources */,
+				58D2D39923BA36C6008DC877 /* OLOidcKeychain.swift in Sources */,
+				58D2D35B23BA3563008DC877 /* OIDEndSessionRequest.m in Sources */,
+				58D2D35A23BA3563008DC877 /* OIDTokenUtilities.m in Sources */,
+				58D2D37123BA3563008DC877 /* OIDError.m in Sources */,
+				58D2D35623BA3563008DC877 /* OIDAuthState.m in Sources */,
+				58D2D3A223BA373A008DC877 /* OLOidcAuthState.swift in Sources */,
+				58D2D36F23BA3563008DC877 /* OIDScopes.m in Sources */,
+				58D2D36E23BA3563008DC877 /* OIDServiceDiscovery.m in Sources */,
+				58D2D37323BA3563008DC877 /* OIDRegistrationRequest.m in Sources */,
+				58D2D39C23BA36ED008DC877 /* OLOidc.swift in Sources */,
+				58D2D37D23BA3563008DC877 /* OIDURLQueryComponent.m in Sources */,
+				58D2D37E23BA3563008DC877 /* OIDTokenResponse.m in Sources */,
+				58D2D36423BA3563008DC877 /* OIDExternalUserAgentIOS.m in Sources */,
+				58D2D37723BA3563008DC877 /* OIDResponseTypes.m in Sources */,
+				58D2D37A23BA3563008DC877 /* OIDScopeUtilities.m in Sources */,
+				58D2D37923BA3563008DC877 /* OIDFieldMapping.m in Sources */,
+				58D2D39123BA3563008DC877 /* OIDAuthorizationService.m in Sources */,
+				58D2D36823BA3563008DC877 /* OIDGrantTypes.m in Sources */,
+				58D2D37623BA3563008DC877 /* OIDURLSessionProvider.m in Sources */,
+				58D2D39F23BA3707008DC877 /* OLOidcConfig.swift in Sources */,
+				58D2D38023BA3563008DC877 /* OIDServiceConfiguration.m in Sources */,
+				58D2D39323BA3563008DC877 /* OIDErrorUtilities.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D2D25323BA2765008DC877 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58D2D3A623BA3802008DC877 /* OLOidcSessionManager.swift in Sources */,
+				58D2D25D23BA2765008DC877 /* ios_oidcTests.swift in Sources */,
+				58D2D3A023BA3707008DC877 /* OLOidcConfig.swift in Sources */,
+				58D2D3A323BA373A008DC877 /* OLOidcAuthState.swift in Sources */,
+				58D2D39D23BA36ED008DC877 /* OLOidc.swift in Sources */,
+				58D2D39A23BA36C6008DC877 /* OLOidcKeychain.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D2D2DB23BA2FE4008DC877 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58D2D2E623BA2FE4008DC877 /* ViewController.swift in Sources */,
+				58D2D2E223BA2FE4008DC877 /* AppDelegate.swift in Sources */,
+				58D2D2E423BA2FE4008DC877 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D2D2F023BA2FE5008DC877 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58D2D2F923BA2FE5008DC877 /* ios_oidc_testerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D2D2FB23BA2FE5008DC877 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58D2D30423BA2FE5008DC877 /* ios_oidc_testerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		58D2D25A23BA2765008DC877 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58D2D24D23BA2765008DC877 /* ios-oidc */;
+			targetProxy = 58D2D25923BA2765008DC877 /* PBXContainerItemProxy */;
+		};
+		58D2D2F623BA2FE5008DC877 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58D2D2DE23BA2FE4008DC877 /* ios-oidc-tester */;
+			targetProxy = 58D2D2F523BA2FE5008DC877 /* PBXContainerItemProxy */;
+		};
+		58D2D30123BA2FE5008DC877 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58D2D2DE23BA2FE4008DC877 /* ios-oidc-tester */;
+			targetProxy = 58D2D30023BA2FE5008DC877 /* PBXContainerItemProxy */;
+		};
+		58D2D3AD23BA7C74008DC877 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58D2D24D23BA2765008DC877 /* ios-oidc */;
+			targetProxy = 58D2D3AC23BA7C74008DC877 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		58D2D2E723BA2FE4008DC877 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58D2D2E823BA2FE4008DC877 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		58D2D2EC23BA2FE5008DC877 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58D2D2ED23BA2FE5008DC877 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		58D2D26023BA2765008DC877 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		58D2D26123BA2765008DC877 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		58D2D26323BA2765008DC877 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2YX6A8Z383;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "ios-oidc/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onelogin.ios-oidc";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		58D2D26423BA2765008DC877 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2YX6A8Z383;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "ios-oidc/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onelogin.ios-oidc";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		58D2D26623BA2765008DC877 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2YX6A8Z383;
+				INFOPLIST_FILE = "ios-oidcTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onelogin.ios-oidcTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		58D2D26723BA2765008DC877 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2YX6A8Z383;
+				INFOPLIST_FILE = "ios-oidcTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onelogin.ios-oidcTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		58D2D30723BA2FE5008DC877 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2YX6A8Z383;
+				INFOPLIST_FILE = "ios-oidc-tester/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onelogin.ios-oidc-tester";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		58D2D30823BA2FE5008DC877 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2YX6A8Z383;
+				INFOPLIST_FILE = "ios-oidc-tester/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onelogin.ios-oidc-tester";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		58D2D30A23BA2FE5008DC877 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2YX6A8Z383;
+				INFOPLIST_FILE = "ios-oidc-testerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onelogin.ios-oidc-testerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-oidc-tester.app/ios-oidc-tester";
+			};
+			name = Debug;
+		};
+		58D2D30B23BA2FE5008DC877 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2YX6A8Z383;
+				INFOPLIST_FILE = "ios-oidc-testerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onelogin.ios-oidc-testerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-oidc-tester.app/ios-oidc-tester";
+			};
+			name = Release;
+		};
+		58D2D30D23BA2FE5008DC877 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2YX6A8Z383;
+				INFOPLIST_FILE = "ios-oidc-testerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onelogin.ios-oidc-testerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ios-oidc-tester";
+			};
+			name = Debug;
+		};
+		58D2D30E23BA2FE5008DC877 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2YX6A8Z383;
+				INFOPLIST_FILE = "ios-oidc-testerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onelogin.ios-oidc-testerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ios-oidc-tester";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58D2D24823BA2765008DC877 /* Build configuration list for PBXProject "ios-oidc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58D2D26023BA2765008DC877 /* Debug */,
+				58D2D26123BA2765008DC877 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58D2D26223BA2765008DC877 /* Build configuration list for PBXNativeTarget "ios-oidc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58D2D26323BA2765008DC877 /* Debug */,
+				58D2D26423BA2765008DC877 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58D2D26523BA2765008DC877 /* Build configuration list for PBXNativeTarget "ios-oidcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58D2D26623BA2765008DC877 /* Debug */,
+				58D2D26723BA2765008DC877 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58D2D30623BA2FE5008DC877 /* Build configuration list for PBXNativeTarget "ios-oidc-tester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58D2D30723BA2FE5008DC877 /* Debug */,
+				58D2D30823BA2FE5008DC877 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58D2D30923BA2FE5008DC877 /* Build configuration list for PBXNativeTarget "ios-oidc-testerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58D2D30A23BA2FE5008DC877 /* Debug */,
+				58D2D30B23BA2FE5008DC877 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58D2D30C23BA2FE5008DC877 /* Build configuration list for PBXNativeTarget "ios-oidc-testerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58D2D30D23BA2FE5008DC877 /* Debug */,
+				58D2D30E23BA2FE5008DC877 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58D2D24523BA2765008DC877 /* Project object */;
+}
