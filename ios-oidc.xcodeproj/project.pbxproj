@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		587DCB0A23BA7F420071EF27 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 587DCB0923BA7F420071EF27 /* README.md */; };
 		58D2D25823BA2765008DC877 /* ios_oidc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D2D24E23BA2765008DC877 /* ios_oidc.framework */; };
 		58D2D25D23BA2765008DC877 /* ios_oidcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2D25C23BA2765008DC877 /* ios_oidcTests.swift */; };
 		58D2D25F23BA2765008DC877 /* ios_oidc.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2D25123BA2765008DC877 /* ios_oidc.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -144,6 +145,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		587DCB0923BA7F420071EF27 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		58D2D24E23BA2765008DC877 /* ios_oidc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ios_oidc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D2D25123BA2765008DC877 /* ios_oidc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_oidc.h; sourceTree = "<group>"; };
 		58D2D25223BA2765008DC877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 		58D2D24423BA2765008DC877 = {
 			isa = PBXGroup;
 			children = (
+				587DCB0923BA7F420071EF27 /* README.md */,
 				58D2D25023BA2765008DC877 /* ios-oidc */,
 				58D2D25B23BA2765008DC877 /* ios-oidcTests */,
 				58D2D2E023BA2FE4008DC877 /* ios-oidc-tester */,
@@ -654,6 +657,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				587DCB0A23BA7F420071EF27 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
