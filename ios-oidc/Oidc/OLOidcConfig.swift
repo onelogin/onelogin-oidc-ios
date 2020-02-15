@@ -8,22 +8,53 @@
 
 import Foundation
 
-public class OLOidcConfig: NSObject, NSCoding {
+public class OLOidcConfig: NSObject, Codable {
 
-    @objc public static let configFile = "OL-Oidc-Config"
+    @objc public static let stdConfigName = "OL-Oidc"
     @objc public let clientId: String
     @objc public let issuer: String
     @objc public let redirectUri: URL
-    @objc public let logoutRedirectUri: URL?
+    @objc private let scopes: String
+    @objc public let loginUrl: URL?
+
+    public static func standard() throws -> OLOidcConfig {
+        return try OLOidcConfig(plist: stdConfigName)
+    }
     
-    public func encode(with coder: NSCoder) {
+    public init(dict: [String: String]) throws {
+        guard let clientId = dict["clientId"], clientId.count > 0,
+              let issuer = dict["issuer"],
+              let _ = URL(string: issuer),
+              let redirectUriString = dict["redirectUri"],
+              let redirectUri = URL(string: redirectUriString),
+              let scopes = dict["scopes"], scopes.contains("openid")
+               else {
+                throw OLOidcError.configInvalid
+        }
         
+        self.clientId = clientId
+        self.issuer = issuer
+        self.redirectUri = redirectUri
+        self.scopes = scopes
+        self.loginUrl = nil
     }
     
-    public required init?(coder: NSCoder) {
-        self.clientId = ""
-        self.issuer = ""
-        self.redirectUri = URL(string: "")!
-        self.logoutRedirectUri = nil
+    public convenience init(plist: String) throws {
+        guard let path = Bundle.main.url(forResource: plist, withExtension: "plist") else {
+            throw OLOidcError.configFileNotFound
+        }
+        
+        guard let data = try? Data(contentsOf: path),
+            let plistContent = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil),
+            let configDict = plistContent as? [String: String] else {
+                throw OLOidcError.configFileParseFailure
+        }
+        
+        try self.init(dict: configDict)
     }
+    
+    public func getScopes() -> [String] {
+        return self.scopes.components(separatedBy: " ")
+    }
+    
 }

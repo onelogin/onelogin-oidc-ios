@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ios-oidc.xcodeproj">
+      location = "self:/Users/dominikthalmann/Documents/ios-oidc/OLOidc.xcodeproj">
    </FileRef>
 </Workspace>

@@ -49,3 +49,4 @@ FOUNDATION_EXPORT const unsigned char ios_oidcVersionString[];
 #import "OIDFieldMapping.h"
 #import "OIDURLQueryComponent.h"
 
+// The AppAuth source files are based on AppAuth version 1.3.0
