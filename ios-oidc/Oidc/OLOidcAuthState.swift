@@ -29,6 +29,12 @@ open class OLOidcAuthState: NSObject {
     open var refreshToken: String? {
         get {return authState?.lastTokenResponse?.refreshToken}
     }
+    open var tokenEndpoint: URL? {
+        get {return authState?.lastAuthorizationResponse.request.configuration.discoveryDocument?.tokenEndpoint}
+    }
+    open var userInfoEndpoint: URL? {
+        get {return authState?.lastAuthorizationResponse.request.configuration.discoveryDocument?.userinfoEndpoint}
+    }
     
     public init(oidcConfig: OLOidcConfig, useSecureStorage: Bool = true, accessibility: CFString = kSecAttrAccessibleWhenUnlockedThisDeviceOnly) {
         self.accessibility = accessibility

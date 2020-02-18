@@ -100,6 +100,12 @@
 		58DE838323F6E5CD00F48106 /* OL-Oidc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58DE838223F6E5CD00F48106 /* OL-Oidc.plist */; };
 		58DE838423F6E5CD00F48106 /* OL-Oidc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58DE838223F6E5CD00F48106 /* OL-Oidc.plist */; };
 		58DE838523F6E5CD00F48106 /* OL-Oidc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58DE838223F6E5CD00F48106 /* OL-Oidc.plist */; };
+		58DE838823FC37D500F48106 /* EndpointConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DE838723FC37D500F48106 /* EndpointConfig.swift */; };
+		58DE838923FC37D500F48106 /* EndpointConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DE838723FC37D500F48106 /* EndpointConfig.swift */; };
+		58DE838B23FC41A000F48106 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DE838A23FC41A000F48106 /* Router.swift */; };
+		58DE838C23FC41A000F48106 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DE838A23FC41A000F48106 /* Router.swift */; };
+		58DE839123FC534200F48106 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DE839023FC534200F48106 /* Endpoint.swift */; };
+		58DE839223FC534200F48106 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DE839023FC534200F48106 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,6 +247,9 @@
 		58D2D39E23BA3707008DC877 /* OLOidcConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLOidcConfig.swift; sourceTree = "<group>"; };
 		58D2D3A123BA373A008DC877 /* OLOidcAuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLOidcAuthState.swift; sourceTree = "<group>"; };
 		58DE838223F6E5CD00F48106 /* OL-Oidc.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OL-Oidc.plist"; sourceTree = "<group>"; };
+		58DE838723FC37D500F48106 /* EndpointConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointConfig.swift; sourceTree = "<group>"; };
+		58DE838A23FC41A000F48106 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		58DE839023FC534200F48106 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -430,6 +439,7 @@
 		58D2D31023BA3135008DC877 /* Oidc */ = {
 			isa = PBXGroup;
 			children = (
+				58DE838623FC37AC00F48106 /* NetworkLayer */,
 				58D2D39823BA36C6008DC877 /* OLOidcKeychain.swift */,
 				58D2D39B23BA36ED008DC877 /* OLOidc.swift */,
 				58D2D39E23BA3707008DC877 /* OLOidcConfig.swift */,
@@ -461,6 +471,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58DE838623FC37AC00F48106 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				58DE838723FC37D500F48106 /* EndpointConfig.swift */,
+				58DE838A23FC41A000F48106 /* Router.swift */,
+				58DE839023FC534200F48106 /* Endpoint.swift */,
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -707,9 +727,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58DE838823FC37D500F48106 /* EndpointConfig.swift in Sources */,
 				58D2D36A23BA3563008DC877 /* OIDClientMetadataParameters.m in Sources */,
 				58D2D35723BA3563008DC877 /* OIDEndSessionResponse.m in Sources */,
 				58D2D37023BA3563008DC877 /* OIDTokenRequest.m in Sources */,
+				58DE838B23FC41A000F48106 /* Router.swift in Sources */,
 				58D2D36B23BA3563008DC877 /* OIDAuthorizationResponse.m in Sources */,
 				58D2D36123BA3563008DC877 /* OIDExternalUserAgentCatalyst.m in Sources */,
 				58D2D35E23BA3563008DC877 /* OIDAuthState+IOS.m in Sources */,
@@ -732,6 +754,7 @@
 				58D2D37D23BA3563008DC877 /* OIDURLQueryComponent.m in Sources */,
 				58D2D37E23BA3563008DC877 /* OIDTokenResponse.m in Sources */,
 				58D2D36423BA3563008DC877 /* OIDExternalUserAgentIOS.m in Sources */,
+				58DE839123FC534200F48106 /* Endpoint.swift in Sources */,
 				58D2D37723BA3563008DC877 /* OIDResponseTypes.m in Sources */,
 				58D2D37A23BA3563008DC877 /* OIDScopeUtilities.m in Sources */,
 				58D2D37923BA3563008DC877 /* OIDFieldMapping.m in Sources */,
@@ -748,11 +771,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58DE838C23FC41A000F48106 /* Router.swift in Sources */,
+				58DE838923FC37D500F48106 /* EndpointConfig.swift in Sources */,
 				587DCB1723E9D7850071EF27 /* OLOidcError.swift in Sources */,
 				58D2D25D23BA2765008DC877 /* ios_oidcTests.swift in Sources */,
 				58D2D3A023BA3707008DC877 /* OLOidcConfig.swift in Sources */,
 				58D2D3A323BA373A008DC877 /* OLOidcAuthState.swift in Sources */,
 				58D2D39D23BA36ED008DC877 /* OLOidc.swift in Sources */,
+				58DE839223FC534200F48106 /* Endpoint.swift in Sources */,
 				58D2D39A23BA36C6008DC877 /* OLOidcKeychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

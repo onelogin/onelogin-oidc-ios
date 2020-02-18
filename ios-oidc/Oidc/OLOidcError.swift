@@ -21,6 +21,7 @@ public enum OLOidcError: Error {
     case noResponseData
     case jsonSerializationError
     case authorizationError(String)
+    case unknownError
 }
 
 extension OLOidcError: LocalizedError {
@@ -52,6 +53,8 @@ extension OLOidcError: LocalizedError {
             return "JSON Serialization Error"
         case .authorizationError(error: let error):
             return "Authorization Error: \(error)"
+        case .unknownError:
+            return "unknown error"
         }
     }
 }

@@ -65,7 +65,7 @@ public class OLOidc: NSObject {
     }
     
     @objc public func signOut(callback: @escaping ((Error?) -> Void)) {
-        guard let tokenEndpoint = self.olAuthState.authState?.lastAuthorizationResponse.request.configuration.discoveryDocument?.tokenEndpoint else {
+        guard let tokenEndpoint = self.olAuthState.tokenEndpoint else {
             callback(OLOidcError.tokenEndpointUndeclared)
             return
         }
@@ -82,58 +82,23 @@ public class OLOidc: NSObject {
                 return
             }
             
-            let body: [String: Any] = ["token": accessToken,
-                                       "token_type_hint": "access_token"]
-            let bodyData = try? JSONSerialization.data(withJSONObject: body)
-            
-            let revocationEndpoint = tokenEndpoint.appendingPathComponent("revocation")
-            var urlRequest = URLRequest(url: revocationEndpoint)
-            urlRequest.allHTTPHeaderFields = ["Content-Type": "application/x-www-form-urlencoded"
-                                                ,"Authorization":"none"
-                                             ]
-            urlRequest.httpMethod = "post"
-            urlRequest.httpBody = bodyData
-            let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-
+            Router().request(endpoint: .signOut(tokenEndpoint: tokenEndpoint, accessToken: accessToken, clientId: self.oidcConfig.clientId)) { (data, response, error) in
                 DispatchQueue.main.async {
-                    
                     guard error == nil else {
-                        callback(OLOidcError.httpRequestFailed(error?.localizedDescription ?? "Unknown error"))
+                        callback(error)
                         return
                     }
 
-                    guard let response = response as? HTTPURLResponse else {
-                        callback(OLOidcError.nonHttpResponse)
-                        return
-                    }
-
-                    guard let data = data else {
-                        callback(OLOidcError.noResponseData)
-                        return
-                    }
-
-                    if response.statusCode != 200 {
-                        // server replied with an error
-                        let responseText: String? = String(data: data, encoding: String.Encoding.utf8)
-                        if response.statusCode == 401 {
-                            callback(OLOidcError.authorizationError("(Response: \(responseText ?? "RESPONSE_TEXT")"))
-                        } else {
-                            callback(OLOidcError.authorizationError("(\(response.statusCode)). Response: \(responseText ?? "RESPONSE_TEXT")"))
-                        }
-
-                        return
-                    }
-
+                    // remove local session
+                    self.endLocalSession()
                     callback(nil)
                 }
             }
-
-            task.resume()
         }
     }
     
     @objc public func introspect(callback: @escaping ((Bool, Error?) -> Void)) {
-        guard let tokenEndpoint = self.olAuthState.authState?.lastAuthorizationResponse.request.configuration.discoveryDocument?.tokenEndpoint else {
+        guard let tokenEndpoint = self.olAuthState.tokenEndpoint else {
             callback(false, OLOidcError.tokenEndpointUndeclared)
             return
         }
@@ -143,58 +108,26 @@ public class OLOidc: NSObject {
             return
         }
         
-        let body: [String: Any] = ["token": accessToken,
-                                   "token_type_hint": "access_token",
-                                   "client_id": oidcConfig.clientId]
-        let bodyData = try? JSONSerialization.data(withJSONObject: body)
-        
-        let introspectionEndpoint = tokenEndpoint.appendingPathComponent("introspection")
-        var urlRequest = URLRequest(url: introspectionEndpoint)
-        urlRequest.allHTTPHeaderFields = ["Content-Type": "application/x-www-form-urlencoded"
-                                            ,"Authorization":"none"
-                                         ]
-        urlRequest.httpMethod = "post"
-        urlRequest.httpBody = bodyData
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-
+        Router().request(endpoint: .introspect(tokenEndpoint: tokenEndpoint, accessToken: accessToken, clientId: self.oidcConfig.clientId)) { (data, response, error) in
             DispatchQueue.main.async {
                 
                 guard error == nil else {
-                    callback(false, OLOidcError.httpRequestFailed(error?.localizedDescription ?? "Unknown error"))
+                    callback(false, error)
                     return
                 }
 
-                guard let response = response as? HTTPURLResponse else {
-                    callback(false, OLOidcError.nonHttpResponse)
+                let jsonResponse = (try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers)) as? [String: Any]
+                guard let isValid = jsonResponse?["active"] as? Bool else {
+                    callback(false, OLOidcError.unknownError)
                     return
                 }
-
-                guard let data = data else {
-                    callback(false, OLOidcError.noResponseData)
-                    return
-                }
-
-                if response.statusCode != 200 {
-                    // server replied with an error
-                    let responseText: String? = String(data: data, encoding: String.Encoding.utf8)
-                    if response.statusCode == 401 {
-                        callback(false, OLOidcError.authorizationError("(Response: \(responseText ?? "RESPONSE_TEXT")"))
-                    } else {
-                        callback(false, OLOidcError.authorizationError("(\(response.statusCode)). Response: \(responseText ?? "RESPONSE_TEXT")"))
-                    }
-
-                    return
-                }
-
-                callback(true, nil)
+                callback(isValid, nil)
             }
         }
-
-        task.resume()
     }
 
     @objc public func getUserInfo(callback: @escaping (([AnyHashable: Any]?, Error?) -> Void)) {
-        guard let userinfoEndpoint = self.olAuthState.authState?.lastAuthorizationResponse.request.configuration.discoveryDocument?.userinfoEndpoint else {
+        guard let userinfoEndpoint = self.olAuthState.userInfoEndpoint else {
             callback(nil, OLOidcError.userEndpointUndeclared)
             return
         }
@@ -269,12 +202,5 @@ public class OLOidc: NSObject {
 
             task.resume()
         }
-    }
-    
-    func toBase64(text: String) -> String? {
-        guard let data = text.data(using: String.Encoding.utf8) else {
-            return nil
-        }
-        return data.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
     }
 }
