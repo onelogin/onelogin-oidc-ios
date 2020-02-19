@@ -8,6 +8,11 @@
 
 import Foundation
 
+@objc public enum TokenType: Int {
+    case AccessToken = 0
+    case RefreshToken = 1
+}
+
 public class OLOidc: NSObject {
     
     @objc public let oidcConfig: OLOidcConfig
@@ -64,35 +69,32 @@ public class OLOidc: NSObject {
         olAuthState.authState = nil
     }
     
-    @objc public func signOut(callback: @escaping ((Error?) -> Void)) {
+    @objc public func revokeToken(tokenType: TokenType, callback: @escaping ((Error?) -> Void)) {
         guard let tokenEndpoint = self.olAuthState.tokenEndpoint else {
             callback(OLOidcError.tokenEndpointUndeclared)
             return
         }
 
-        self.olAuthState.authState?.performAction() { (accessToken, idToken, error) in
-
-            if error != nil  {
-                callback(OLOidcError.fetchingFreshTokenError(error?.localizedDescription ?? "Unknown error"))
-                return
-            }
-
-            guard let accessToken = accessToken else {
-                callback(OLOidcError.gettingAccessTokenError)
-                return
-            }
-            
-            Router().request(endpoint: .signOut(tokenEndpoint: tokenEndpoint, accessToken: accessToken, clientId: self.oidcConfig.clientId)) { (data, response, error) in
-                DispatchQueue.main.async {
-                    guard error == nil else {
-                        callback(error)
-                        return
-                    }
-
-                    // remove local session
-                    self.endLocalSession()
-                    callback(nil)
+        var token: String?
+        switch(tokenType) {
+        case .AccessToken:
+            token = olAuthState.accessToken
+            break
+        case .RefreshToken:
+            token = olAuthState.refreshToken
+        }
+        guard let _ = token else {
+            callback(OLOidcError.gettingAccessTokenError)
+            return
+        }
+        
+        Router().request(endpoint: .revoke(tokenEndpoint: tokenEndpoint, accessToken: token!, clientId: self.oidcConfig.clientId)) { (data, response, error) in
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    callback(error)
+                    return
                 }
+                callback(nil)
             }
         }
     }

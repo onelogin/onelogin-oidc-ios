@@ -9,7 +9,7 @@
 import Foundation
 
 public enum Endpoint {
-    case signOut(tokenEndpoint: URL, accessToken: String, clientId: String)
+    case revoke(tokenEndpoint: URL, accessToken: String, clientId: String)
     case introspect(tokenEndpoint: URL, accessToken: String, clientId: String)
 }
 
@@ -17,7 +17,7 @@ extension Endpoint: EndpointConfig {
     
     var baseURL: URL {
         switch self {
-        case .signOut(let tokenEndpoint, _, _):
+        case .revoke(let tokenEndpoint, _, _):
             return tokenEndpoint
         case .introspect(let tokenEndpoint, _, _):
             return tokenEndpoint
@@ -26,7 +26,7 @@ extension Endpoint: EndpointConfig {
     
     var path: String {
         switch self {
-        case .signOut:
+        case .revoke:
             return "revocation"
         case .introspect:
             return "introspection"
@@ -35,7 +35,7 @@ extension Endpoint: EndpointConfig {
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .signOut:
+        case .revoke:
             return .post
         case .introspect:
             return .post
@@ -44,7 +44,7 @@ extension Endpoint: EndpointConfig {
     
     var headers: HTTPHeaders? {
         switch self {
-        case .signOut:
+        case .revoke:
             return ["Content-Type": "application/x-www-form-urlencoded"]
         case .introspect:
             return ["Content-Type": "application/x-www-form-urlencoded"]
@@ -53,7 +53,7 @@ extension Endpoint: EndpointConfig {
     
     var body: Data? {
         switch self {
-        case .signOut(_, let accessToken, let clientId):
+        case .revoke(_, let accessToken, let clientId):
             let body: [String: String] = ["token": accessToken,
                                        "token_type_hint": "access_token",
                                        "client_id": clientId]

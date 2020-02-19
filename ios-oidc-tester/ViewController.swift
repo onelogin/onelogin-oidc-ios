@@ -58,18 +58,28 @@ class ViewController: UIViewController {
         })
     }
     
-    @IBAction func btnSignOutClicked(_ sender: Any) {
+    @IBAction func btnDeleteTokensClicked(_ sender: Any) {
         olOidc?.endLocalSession()
-        self.setInfoText(text: "Successfully removed local session")
+        self.setInfoText(text: "Successfully removed local tokens from the keychain")
     }
     
-    @IBAction func btnRevokeSessionClicked(_ sender: Any) {
-        olOidc?.signOut(callback: { (error) in
+    @IBAction func btnRevokeAccessTokenClicked(_ sender: Any) {
+        olOidc?.revokeToken(tokenType: .AccessToken, callback: { (error) in
             if let error = error {
                 self.setInfoText(text: error.localizedDescription)
                 return
             }
-            self.setInfoText(text: "Successfully revoked session")
+            self.setInfoText(text: "Successfully revoked Access-Token")
+        })
+    }
+    
+    @IBAction func btnRevokeRefreshTokenClicked(_ sender: Any) {
+        olOidc?.revokeToken(tokenType: .RefreshToken, callback: { (error) in
+            if let error = error {
+                self.setInfoText(text: error.localizedDescription)
+                return
+            }
+            self.setInfoText(text: "Successfully revoked Refresh-Token")
         })
     }
 }
