@@ -17,11 +17,11 @@ public class OLOidcConfig: NSObject, Codable {
     @objc private let scopes: String
     @objc public let loginUrl: URL?
 
-    public static func standard() throws -> OLOidcConfig {
+    @objc public static func standard() throws -> OLOidcConfig {
         return try OLOidcConfig(plist: stdConfigName)
     }
     
-    public init(dict: [String: String]) throws {
+    @objc public init(dict: [String: String]) throws {
         guard let clientId = dict["clientId"], clientId.count > 0,
               let issuer = dict["issuer"],
               let _ = URL(string: issuer),
@@ -39,7 +39,7 @@ public class OLOidcConfig: NSObject, Codable {
         self.loginUrl = nil
     }
     
-    public convenience init(plist: String) throws {
+    @objc public convenience init(plist: String) throws {
         guard let path = Bundle.main.url(forResource: plist, withExtension: "plist") else {
             throw OLOidcError.configFileNotFound
         }
@@ -53,7 +53,7 @@ public class OLOidcConfig: NSObject, Codable {
         try self.init(dict: configDict)
     }
     
-    public func getScopes() -> [String] {
+    @objc public func getScopes() -> [String] {
         return self.scopes.components(separatedBy: " ")
     }
     

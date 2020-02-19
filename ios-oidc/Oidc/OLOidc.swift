@@ -16,8 +16,8 @@ import Foundation
 public class OLOidc: NSObject {
     
     @objc public let oidcConfig: OLOidcConfig
-    public var olAuthState: OLOidcAuthState
-    public var currentAuthorizationFlow: OIDExternalUserAgentSession?
+    @objc public var olAuthState: OLOidcAuthState
+    @objc public var currentAuthorizationFlow: OIDExternalUserAgentSession?
     
     @objc public init(configuration: OLOidcConfig? = nil, useSecureStorage: Bool = true) throws {
         if let config = configuration {

@@ -11,7 +11,7 @@ import Foundation
 open class OLOidcAuthState: NSObject {
     
     private let useSecureStorage: Bool
-    private let storagePrefix = "ol-oidc-authState-"
+    private static let storagePrefix = "ol-oidc-authState-"
     @objc open var authState: OIDAuthState? {
         didSet {
             if (useSecureStorage) {writeToKeychain()}
@@ -19,36 +19,36 @@ open class OLOidcAuthState: NSObject {
     }
     @objc open var configuration: OIDServiceDiscovery?
     private let clientId: String
-    open var accessibility : CFString
-    open var accessToken: String? {
+    @objc open var accessibility : CFString
+    @objc open var accessToken: String? {
         get {return authState?.lastTokenResponse?.accessToken}
     }
-    open var idToken: String? {
+    @objc open var idToken: String? {
         get {return authState?.lastTokenResponse?.idToken}
     }
-    open var refreshToken: String? {
+    @objc open var refreshToken: String? {
         get {return authState?.lastTokenResponse?.refreshToken}
     }
-    open var tokenEndpoint: URL? {
+    @objc open var tokenEndpoint: URL? {
         get {return authState?.lastAuthorizationResponse.request.configuration.discoveryDocument?.tokenEndpoint}
     }
-    open var userInfoEndpoint: URL? {
+    @objc open var userInfoEndpoint: URL? {
         get {return authState?.lastAuthorizationResponse.request.configuration.discoveryDocument?.userinfoEndpoint}
     }
     
-    public init(oidcConfig: OLOidcConfig, useSecureStorage: Bool = true, accessibility: CFString = kSecAttrAccessibleWhenUnlockedThisDeviceOnly) {
+    @objc public init(oidcConfig: OLOidcConfig, useSecureStorage: Bool = true, accessibility: CFString = kSecAttrAccessibleWhenUnlockedThisDeviceOnly) {
         self.accessibility = accessibility
         self.clientId = oidcConfig.clientId
         self.useSecureStorage = useSecureStorage
-        self.authState = useSecureStorage ? OLOidcAuthState.readFromKeychain(key: clientId) : nil
+        self.authState = useSecureStorage ? OLOidcAuthState.readFromKeychain(key: OLOidcAuthState.getStorageKey(clientId: clientId)) : nil
     }
     
-    private func getStorageKey() -> String {
+    private static func getStorageKey(clientId: String) -> String {
         return storagePrefix + clientId
     }
     
-    public func readFromKeychain() -> OIDAuthState? {
-        return OLOidcAuthState.readFromKeychain(key: getStorageKey())
+    @objc public func readFromKeychain() -> OIDAuthState? {
+        return OLOidcAuthState.readFromKeychain(key: OLOidcAuthState.getStorageKey(clientId: clientId))
     }
     
     private class func readFromKeychain(key: String) -> OIDAuthState? {
@@ -65,13 +65,13 @@ open class OLOidcAuthState: NSObject {
         return savedState
     }
     
-    public func writeToKeychain() {
+    @objc public func writeToKeychain() {
         if let authState = authState {
             // Serialize
             let authStateData = try! NSKeyedArchiver.archivedData(withRootObject: authState, requiringSecureCoding: false)
             do {
                 try OLOidcKeychain.set(
-                    key: getStorageKey(),
+                    key: OLOidcAuthState.getStorageKey(clientId: clientId),
                     data: authStateData,
                     accessibility: self.accessibility
                 )
@@ -83,7 +83,7 @@ open class OLOidcAuthState: NSObject {
         }
     }
     
-    public func deleteFromKeychain() {
-        try? OLOidcKeychain.remove(key: getStorageKey())
+    @objc public func deleteFromKeychain() {
+        try? OLOidcKeychain.remove(key: OLOidcAuthState.getStorageKey(clientId: clientId))
     }
 }
