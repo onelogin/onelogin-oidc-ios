@@ -59,7 +59,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnDeleteTokensClicked(_ sender: Any) {
-        olOidc?.endLocalSession()
+        olOidc?.deleteTokens()
         self.setInfoText(text: "Successfully removed local tokens from the keychain")
     }
     

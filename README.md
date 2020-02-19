@@ -17,8 +17,8 @@ To get more info about how to configure an app for OIDC visit the [Overview of O
 - [Secure Storage](#secure-storage)
 - [API overview](#api-overview)
   - [signIn](#signIn)
-  - [endLocalSession](#endlocalsession)
-  - [signOut](#signout)
+  - [deleteTokens](#deleteTokens)
+  - [revokeToken](#revokeToken)
   - [introspect](#introspect)
   - [getUserInfo](#getuserinfo)
 
@@ -140,22 +140,30 @@ olOidc?.signIn(presenter: self) { error in
 }
 ```
 
-### endLocalSession
+### deleteTokens
 
-To remove a local session you can call `endLocalSession`. This will remove the saved session data from the keychain. Please note that this won't remove any cookies and also does not revoke an access token on the server:
+To remove a local session you can call `deleteTokens`. This will remove the saved session data from the keychain. Please note that this won't remove any cookies and also does not revoke an access token on the server:
 
 ```swift
-olOidc?.endLocalSession()
+olOidc?.deleteTokens()
 ```
 
-### signOut
+### revokeToken
 
-To revoke an access token on the server you can call `signOut`. If the call is successful your local access token won't work for authorization anymore:
+To revoke a token on the server you can call `revokeToken`. You can specify if you want to revoke an access- or a refresh-token. If the call is successful the token won't work for authorization anymore:
 
 ```swift
-olOidc?.signOut(callback: { (error) in
-    if error != nil {
+// Revoke access token
+olOidc?.revokeToken(tokenType: .AccessToken, callback: { (error) in
+    if error == nil {
         // the access token has been revoked 
+    }
+})
+
+// Revoke refresh token
+olOidc?.revokeToken(tokenType: .RefreshToken, callback: { (error) in
+    if error == nil {
+        // the refresh token has been revoked 
     }
 })
 ```

@@ -65,7 +65,7 @@ public class OLOidc: NSObject {
         
     }
 
-    @objc public func endLocalSession() {
+    @objc public func deleteTokens() {
         olAuthState.authState = nil
     }
     
