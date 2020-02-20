@@ -106,6 +106,14 @@
 		58DE838C23FC41A000F48106 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DE838A23FC41A000F48106 /* Router.swift */; };
 		58DE839123FC534200F48106 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DE839023FC534200F48106 /* Endpoint.swift */; };
 		58DE839223FC534200F48106 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DE839023FC534200F48106 /* Endpoint.swift */; };
+		58DE83C923FEE76400F48106 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DE83C823FEE76400F48106 /* AppDelegate.m */; };
+		58DE83CC23FEE76400F48106 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DE83CB23FEE76400F48106 /* SceneDelegate.m */; };
+		58DE83CF23FEE76500F48106 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DE83CE23FEE76500F48106 /* ViewController.m */; };
+		58DE83D223FEE76500F48106 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58DE83D023FEE76500F48106 /* Main.storyboard */; };
+		58DE83D423FEE76600F48106 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58DE83D323FEE76600F48106 /* Assets.xcassets */; };
+		58DE83D723FEE76600F48106 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58DE83D523FEE76600F48106 /* LaunchScreen.storyboard */; };
+		58DE83DA23FEE76600F48106 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DE83D923FEE76600F48106 /* main.m */; };
+		58DE83DF23FF008B00F48106 /* OL-Oidc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58DE83DE23FF008B00F48106 /* OL-Oidc.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +258,19 @@
 		58DE838723FC37D500F48106 /* EndpointConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointConfig.swift; sourceTree = "<group>"; };
 		58DE838A23FC41A000F48106 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		58DE839023FC534200F48106 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		58DE83C523FEE76400F48106 /* ios-oidc-objc-tester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-oidc-objc-tester.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58DE83C723FEE76400F48106 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		58DE83C823FEE76400F48106 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		58DE83CA23FEE76400F48106 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		58DE83CB23FEE76400F48106 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		58DE83CD23FEE76400F48106 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		58DE83CE23FEE76500F48106 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		58DE83D123FEE76500F48106 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		58DE83D323FEE76600F48106 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		58DE83D623FEE76600F48106 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		58DE83D823FEE76600F48106 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58DE83D923FEE76600F48106 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		58DE83DE23FF008B00F48106 /* OL-Oidc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OL-Oidc.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +311,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		58DE83C223FEE76400F48106 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -302,6 +330,7 @@
 				58D2D2E023BA2FE4008DC877 /* ios-oidc-tester */,
 				58D2D2F723BA2FE5008DC877 /* ios-oidc-testerTests */,
 				58D2D30223BA2FE5008DC877 /* ios-oidc-testerUITests */,
+				58DE83C623FEE76400F48106 /* ios-oidc-objc-tester */,
 				58D2D24F23BA2765008DC877 /* Products */,
 				58D2D3A923BA7C74008DC877 /* Frameworks */,
 			);
@@ -315,6 +344,7 @@
 				58D2D2DF23BA2FE4008DC877 /* OLOidc-tester.app */,
 				58D2D2F423BA2FE5008DC877 /* OLOidc-testerTests.xctest */,
 				58D2D2FF23BA2FE5008DC877 /* OLOidc-testerUITests.xctest */,
+				58DE83C523FEE76400F48106 /* ios-oidc-objc-tester.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -483,6 +513,25 @@
 			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
+		58DE83C623FEE76400F48106 /* ios-oidc-objc-tester */ = {
+			isa = PBXGroup;
+			children = (
+				58DE83DE23FF008B00F48106 /* OL-Oidc.plist */,
+				58DE83C723FEE76400F48106 /* AppDelegate.h */,
+				58DE83C823FEE76400F48106 /* AppDelegate.m */,
+				58DE83CA23FEE76400F48106 /* SceneDelegate.h */,
+				58DE83CB23FEE76400F48106 /* SceneDelegate.m */,
+				58DE83CD23FEE76400F48106 /* ViewController.h */,
+				58DE83CE23FEE76500F48106 /* ViewController.m */,
+				58DE83D023FEE76500F48106 /* Main.storyboard */,
+				58DE83D323FEE76600F48106 /* Assets.xcassets */,
+				58DE83D523FEE76600F48106 /* LaunchScreen.storyboard */,
+				58DE83D823FEE76600F48106 /* Info.plist */,
+				58DE83D923FEE76600F48106 /* main.m */,
+			);
+			path = "ios-oidc-objc-tester";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -625,6 +674,23 @@
 			productReference = 58D2D2FF23BA2FE5008DC877 /* OLOidc-testerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		58DE83C423FEE76400F48106 /* ios-oidc-objc-tester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58DE83DD23FEE76600F48106 /* Build configuration list for PBXNativeTarget "ios-oidc-objc-tester" */;
+			buildPhases = (
+				58DE83C123FEE76400F48106 /* Sources */,
+				58DE83C223FEE76400F48106 /* Frameworks */,
+				58DE83C323FEE76400F48106 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ios-oidc-objc-tester";
+			productName = "ios-oidc-objc-tester";
+			productReference = 58DE83C523FEE76400F48106 /* ios-oidc-objc-tester.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -653,6 +719,9 @@
 						CreatedOnToolsVersion = 11.2.1;
 						TestTargetID = 58D2D2DE23BA2FE4008DC877;
 					};
+					58DE83C423FEE76400F48106 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
 				};
 			};
 			buildConfigurationList = 58D2D24823BA2765008DC877 /* Build configuration list for PBXProject "OLOidc" */;
@@ -673,6 +742,7 @@
 				58D2D2DE23BA2FE4008DC877 /* OLOidc-tester */,
 				58D2D2F323BA2FE5008DC877 /* OLOidc-testerTests */,
 				58D2D2FE23BA2FE5008DC877 /* OLOidc-testerUITests */,
+				58DE83C423FEE76400F48106 /* ios-oidc-objc-tester */,
 			);
 		};
 /* End PBXProject section */
@@ -717,6 +787,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				58DE838523F6E5CD00F48106 /* OL-Oidc.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58DE83C323FEE76400F48106 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58DE83D723FEE76600F48106 /* LaunchScreen.storyboard in Resources */,
+				58DE83D423FEE76600F48106 /* Assets.xcassets in Resources */,
+				58DE83DF23FF008B00F48106 /* OL-Oidc.plist in Resources */,
+				58DE83D223FEE76500F48106 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,6 +890,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		58DE83C123FEE76400F48106 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58DE83CF23FEE76500F48106 /* ViewController.m in Sources */,
+				58DE83C923FEE76400F48106 /* AppDelegate.m in Sources */,
+				58DE83DA23FEE76600F48106 /* main.m in Sources */,
+				58DE83CC23FEE76400F48106 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -847,6 +939,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				58D2D2ED23BA2FE5008DC877 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		58DE83D023FEE76500F48106 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58DE83D123FEE76500F48106 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		58DE83D523FEE76600F48106 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58DE83D623FEE76600F48106 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1185,6 +1293,40 @@
 			};
 			name = Release;
 		};
+		58DE83DB23FEE76600F48106 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2YX6A8Z383;
+				INFOPLIST_FILE = "ios-oidc-objc-tester/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onelogin.ios-oidc-objc-tester";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		58DE83DC23FEE76600F48106 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2YX6A8Z383;
+				INFOPLIST_FILE = "ios-oidc-objc-tester/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onelogin.ios-oidc-objc-tester";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1238,6 +1380,15 @@
 			buildConfigurations = (
 				58D2D30D23BA2FE5008DC877 /* Debug */,
 				58D2D30E23BA2FE5008DC877 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58DE83DD23FEE76600F48106 /* Build configuration list for PBXNativeTarget "ios-oidc-objc-tester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58DE83DB23FEE76600F48106 /* Debug */,
+				58DE83DC23FEE76600F48106 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
