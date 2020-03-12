@@ -48,7 +48,7 @@ public class OLOidc: NSObject {
                                                   scopes: self.oidcConfig.getScopes(),
                                                   redirectURL: self.oidcConfig.redirectUri,
                                                   responseType: OIDResponseTypeCode,
-                                                  additionalParameters: nil)
+                                                  additionalParameters: self.oidcConfig.additionalParameters)
 
             let externalUserAgent = OIDExternalUserAgentIOS(presenting: presenter)
             self.currentAuthorizationFlow = OIDAuthState.authState(byPresenting: request, externalUserAgent: externalUserAgent!) { (authState, error) in
