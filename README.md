@@ -21,6 +21,7 @@ To get more info about how to configure an app for OIDC visit the [Overview of O
   - [revokeToken](#revokeToken)
   - [introspect](#introspect)
   - [getUserInfo](#getuserinfo)
+  - [refreshAccessToken](#refreshAccessToken)
 
 <!-- /TOC -->
 
@@ -72,6 +73,12 @@ Required parameters are:
  - clientId
  - redirectUri
  - scopes (requires at least `openid`, values are space separated)
+ 
+Additionally you can add as many custom parameters as you want. For example you can add
+```swift
+"resource": "https://api.example.com/contacts"
+```
+to your plist file in order to generate a custom access token. You can read about additional parameters on the [OIDC Auth Code Flow](https://developers.onelogin.com/openid-connect/api/authorization-code) page.
 
 ## Authorization redirect
 
@@ -128,7 +135,7 @@ olOidc?.olAuthState.deleteFromKeychain()
 
 ### signIn
 
-To start the authorization you have to initialize an `OLOidc` object and call `signIn`. The function will return an error in the callback if something goes wrong. If the authorization was successful, the response data will be saved securely in the keychain and you can access it easily through the `OLOidcAuthState`object:
+To start the authorization you have to initialize an `OLOidc` object and call `signIn`. The function will return an error in the callback if something goes wrong. If the authorization was successful, the response data will be saved securely in the keychain and you can access it easily through the `OLOidcAuthState`object. Besides the pure idToken you can use  idTokenParsed` to directly access properties like the claims or audience for that token:
 
 ```swift
 olOidc?.signIn(presenter: self) { error in
@@ -136,6 +143,7 @@ olOidc?.signIn(presenter: self) { error in
         let accessToken = self.olOidc?.olAuthState.accessToken
         let refreshToken = self.olOidc?.olAuthState.refreshToken
         let idToken = self.olOidc?.olAuthState.idToken
+        let claims = self.olOidc?.olAuthState.idTokenParsed?.claims
     }
 }
 ```
@@ -189,5 +197,19 @@ olOidc?.getUserInfo(callback: { (userInfo, error) in
                 return
             }
             print("\(String(describing: userInfo))")
+        })
+```
+
+### refreshAccessToken
+
+To refresh an access token you can call the `refreshAccessToken` function:
+
+```swift
+olOidc?.refreshAccessToken(callback: { (error) in
+            if let error = error {
+                // some error occured
+                return
+            }
+            // Successfully refreshed access token
         })
 ```

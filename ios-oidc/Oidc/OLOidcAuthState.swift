@@ -26,6 +26,9 @@ open class OLOidcAuthState: NSObject {
     @objc open var idToken: String? {
         get {return authState?.lastTokenResponse?.idToken}
     }
+    @objc open var idTokenParsed: OIDIDToken? {
+        get {return OIDIDToken(idTokenString: authState?.lastTokenResponse?.idToken ?? "")}
+    }
     @objc open var refreshToken: String? {
         get {return authState?.lastTokenResponse?.refreshToken}
     }

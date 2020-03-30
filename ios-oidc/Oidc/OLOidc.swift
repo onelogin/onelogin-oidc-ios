@@ -48,7 +48,7 @@ public class OLOidc: NSObject {
                                                   scopes: self.oidcConfig.getScopes(),
                                                   redirectURL: self.oidcConfig.redirectUri,
                                                   responseType: OIDResponseTypeCode,
-                                                  additionalParameters: nil)
+                                                  additionalParameters: self.oidcConfig.additionalParameters)
 
             let externalUserAgent = OIDExternalUserAgentIOS(presenting: presenter)
             self.currentAuthorizationFlow = OIDAuthState.authState(byPresenting: request, externalUserAgent: externalUserAgent!) { (authState, error) in
@@ -204,5 +204,17 @@ public class OLOidc: NSObject {
 
             task.resume()
         }
+    }
+    
+    @objc public func refreshAccessToken(callback: @escaping ((Error?) -> Void)) {
+        olAuthState.authState?.setNeedsTokenRefresh()
+        olAuthState.authState?.performAction(freshTokens: { (freshAccessToken, idToken, error) in
+            if error != nil {
+                callback(error)
+                return
+            }
+            self.olAuthState.authState = self.olAuthState.authState
+            callback(nil)
+        })
     }
 }
