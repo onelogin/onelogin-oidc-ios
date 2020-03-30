@@ -21,6 +21,7 @@ To get more info about how to configure an app for OIDC visit the [Overview of O
   - [revokeToken](#revokeToken)
   - [introspect](#introspect)
   - [getUserInfo](#getuserinfo)
+  - [refreshAccessToken](#refreshAccessToken)
 
 <!-- /TOC -->
 
@@ -196,5 +197,19 @@ olOidc?.getUserInfo(callback: { (userInfo, error) in
                 return
             }
             print("\(String(describing: userInfo))")
+        })
+```
+
+### refreshAccessToken
+
+To refresh an access token you can call the `refreshAccessToken` function:
+
+```swift
+olOidc?.refreshAccessToken(callback: { (error) in
+            if let error = error {
+                // some error occured
+                return
+            }
+            // Successfully refreshed access token
         })
 ```
