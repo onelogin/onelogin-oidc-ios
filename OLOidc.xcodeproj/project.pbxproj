@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58162660243B735200AF5484 /* OLOidc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D2D24E23BA2765008DC877 /* OLOidc.framework */; };
 		587DCB0A23BA7F420071EF27 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 587DCB0923BA7F420071EF27 /* README.md */; };
 		587DCB1623E9D7850071EF27 /* OLOidcError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DCB1523E9D7850071EF27 /* OLOidcError.swift */; };
 		587DCB1723E9D7850071EF27 /* OLOidcError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DCB1523E9D7850071EF27 /* OLOidcError.swift */; };
@@ -117,6 +118,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		58162661243B737300AF5484 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58D2D24523BA2765008DC877 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58D2D24D23BA2765008DC877;
+			remoteInfo = OLOidc;
+		};
 		58D2D25923BA2765008DC877 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 58D2D24523BA2765008DC877 /* Project object */;
@@ -301,6 +309,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58162660243B735200AF5484 /* OLOidc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +658,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				58162662243B737300AF5484 /* PBXTargetDependency */,
 				58D2D2F623BA2FE5008DC877 /* PBXTargetDependency */,
 			);
 			name = "OLOidc-testerTests";
@@ -904,6 +914,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		58162662243B737300AF5484 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58D2D24D23BA2765008DC877 /* OLOidc */;
+			targetProxy = 58162661243B737300AF5484 /* PBXContainerItemProxy */;
+		};
 		58D2D25A23BA2765008DC877 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 58D2D24D23BA2765008DC877 /* OLOidc */;
@@ -1227,7 +1242,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OLOidc-tester.app/OLOidc-tester";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-oidc-swift-tester.app/ios-oidc-swift-tester";
 			};
 			name = Debug;
 		};
@@ -1249,7 +1264,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OLOidc-tester.app/OLOidc-tester";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-oidc-swift-tester.app/ios-oidc-swift-tester";
 			};
 			name = Release;
 		};
