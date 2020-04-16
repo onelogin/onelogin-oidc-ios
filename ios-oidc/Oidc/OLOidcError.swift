@@ -6,7 +6,7 @@
 //  Copyright © 2020 OneLogin. All rights reserved.
 //
 
-public enum OLOidcError: Error {
+public enum OLOidcError: Error, Equatable {
     // Configuration
     case configFileNotFound
     case configFileParseFailure
