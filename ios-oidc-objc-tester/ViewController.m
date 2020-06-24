@@ -85,4 +85,15 @@
     }];
 }
 
+- (IBAction)btnRefreshAccessTokenClicked:(id)sender {
+    [self.olOidc refreshAccessTokenWithCallback:^(NSError * error) {
+        if (error != nil) {
+            [self setInfoText:[@"Error refreshing access token: " stringByAppendingString:error.localizedDescription]];
+            return;
+        }
+        [self setInfoText:@"Successfully refreshed access token"];
+    }];
+}
+
+
 @end

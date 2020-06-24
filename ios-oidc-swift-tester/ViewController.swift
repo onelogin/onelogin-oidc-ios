@@ -82,5 +82,16 @@ class ViewController: UIViewController {
             self.setInfoText(text: "Successfully revoked Refresh-Token")
         })
     }
+    
+    @IBAction func btnRefreshAccessTokenClicked(_ sender: Any) {
+        olOidc?.refreshAccessToken(callback: { (error) in
+            if let error = error {
+                self.setInfoText(text: error.localizedDescription)
+                return
+            }
+            self.setInfoText(text: "Successfully refreshed access token")
+        })
+    }
+    
 }
 

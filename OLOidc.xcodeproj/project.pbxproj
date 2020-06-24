@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58162660243B735200AF5484 /* OLOidc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D2D24E23BA2765008DC877 /* OLOidc.framework */; };
 		587DCB0A23BA7F420071EF27 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 587DCB0923BA7F420071EF27 /* README.md */; };
 		587DCB1623E9D7850071EF27 /* OLOidcError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DCB1523E9D7850071EF27 /* OLOidcError.swift */; };
 		587DCB1723E9D7850071EF27 /* OLOidcError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DCB1523E9D7850071EF27 /* OLOidcError.swift */; };
@@ -117,6 +118,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		58162661243B737300AF5484 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58D2D24523BA2765008DC877 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58D2D24D23BA2765008DC877;
+			remoteInfo = OLOidc;
+		};
 		58D2D25923BA2765008DC877 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 58D2D24523BA2765008DC877 /* Project object */;
@@ -170,7 +178,7 @@
 		58D2D25723BA2765008DC877 /* OLOidcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OLOidcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D2D25C23BA2765008DC877 /* ios_oidcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_oidcTests.swift; sourceTree = "<group>"; };
 		58D2D25E23BA2765008DC877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58D2D2DF23BA2FE4008DC877 /* OLOidc-tester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OLOidc-tester.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58D2D2DF23BA2FE4008DC877 /* ios-oidc-swift-tester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-oidc-swift-tester.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D2D2E123BA2FE4008DC877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58D2D2E323BA2FE4008DC877 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		58D2D2E523BA2FE4008DC877 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +309,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58162660243B735200AF5484 /* OLOidc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +336,7 @@
 				587DCB0923BA7F420071EF27 /* README.md */,
 				58D2D25023BA2765008DC877 /* ios-oidc */,
 				58D2D25B23BA2765008DC877 /* ios-oidcTests */,
-				58D2D2E023BA2FE4008DC877 /* ios-oidc-tester */,
+				58D2D2E023BA2FE4008DC877 /* ios-oidc-swift-tester */,
 				58D2D2F723BA2FE5008DC877 /* ios-oidc-testerTests */,
 				58D2D30223BA2FE5008DC877 /* ios-oidc-testerUITests */,
 				58DE83C623FEE76400F48106 /* ios-oidc-objc-tester */,
@@ -341,7 +350,7 @@
 			children = (
 				58D2D24E23BA2765008DC877 /* OLOidc.framework */,
 				58D2D25723BA2765008DC877 /* OLOidcTests.xctest */,
-				58D2D2DF23BA2FE4008DC877 /* OLOidc-tester.app */,
+				58D2D2DF23BA2FE4008DC877 /* ios-oidc-swift-tester.app */,
 				58D2D2F423BA2FE5008DC877 /* OLOidc-testerTests.xctest */,
 				58D2D2FF23BA2FE5008DC877 /* OLOidc-testerUITests.xctest */,
 				58DE83C523FEE76400F48106 /* ios-oidc-objc-tester.app */,
@@ -369,7 +378,7 @@
 			path = "ios-oidcTests";
 			sourceTree = "<group>";
 		};
-		58D2D2E023BA2FE4008DC877 /* ios-oidc-tester */ = {
+		58D2D2E023BA2FE4008DC877 /* ios-oidc-swift-tester */ = {
 			isa = PBXGroup;
 			children = (
 				58D2D2E123BA2FE4008DC877 /* AppDelegate.swift */,
@@ -381,7 +390,7 @@
 				58D2D2EF23BA2FE5008DC877 /* Info.plist */,
 				58DE838223F6E5CD00F48106 /* OL-Oidc.plist */,
 			);
-			path = "ios-oidc-tester";
+			path = "ios-oidc-swift-tester";
 			sourceTree = "<group>";
 		};
 		58D2D2F723BA2FE5008DC877 /* ios-oidc-testerTests */ = {
@@ -619,9 +628,9 @@
 			productReference = 58D2D25723BA2765008DC877 /* OLOidcTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		58D2D2DE23BA2FE4008DC877 /* OLOidc-tester */ = {
+		58D2D2DE23BA2FE4008DC877 /* ios-oidc-swift-tester */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58D2D30623BA2FE5008DC877 /* Build configuration list for PBXNativeTarget "OLOidc-tester" */;
+			buildConfigurationList = 58D2D30623BA2FE5008DC877 /* Build configuration list for PBXNativeTarget "ios-oidc-swift-tester" */;
 			buildPhases = (
 				58D2D2DB23BA2FE4008DC877 /* Sources */,
 				58D2D2DC23BA2FE4008DC877 /* Frameworks */,
@@ -633,9 +642,9 @@
 			dependencies = (
 				58D2D3AD23BA7C74008DC877 /* PBXTargetDependency */,
 			);
-			name = "OLOidc-tester";
+			name = "ios-oidc-swift-tester";
 			productName = "ios-oidc-tester";
-			productReference = 58D2D2DF23BA2FE4008DC877 /* OLOidc-tester.app */;
+			productReference = 58D2D2DF23BA2FE4008DC877 /* ios-oidc-swift-tester.app */;
 			productType = "com.apple.product-type.application";
 		};
 		58D2D2F323BA2FE5008DC877 /* OLOidc-testerTests */ = {
@@ -649,6 +658,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				58162662243B737300AF5484 /* PBXTargetDependency */,
 				58D2D2F623BA2FE5008DC877 /* PBXTargetDependency */,
 			);
 			name = "OLOidc-testerTests";
@@ -739,7 +749,7 @@
 			targets = (
 				58D2D24D23BA2765008DC877 /* OLOidc */,
 				58D2D25623BA2765008DC877 /* OLOidcTests */,
-				58D2D2DE23BA2FE4008DC877 /* OLOidc-tester */,
+				58D2D2DE23BA2FE4008DC877 /* ios-oidc-swift-tester */,
 				58D2D2F323BA2FE5008DC877 /* OLOidc-testerTests */,
 				58D2D2FE23BA2FE5008DC877 /* OLOidc-testerUITests */,
 				58DE83C423FEE76400F48106 /* ios-oidc-objc-tester */,
@@ -904,6 +914,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		58162662243B737300AF5484 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58D2D24D23BA2765008DC877 /* OLOidc */;
+			targetProxy = 58162661243B737300AF5484 /* PBXContainerItemProxy */;
+		};
 		58D2D25A23BA2765008DC877 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 58D2D24D23BA2765008DC877 /* OLOidc */;
@@ -911,12 +926,12 @@
 		};
 		58D2D2F623BA2FE5008DC877 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 58D2D2DE23BA2FE4008DC877 /* OLOidc-tester */;
+			target = 58D2D2DE23BA2FE4008DC877 /* ios-oidc-swift-tester */;
 			targetProxy = 58D2D2F523BA2FE5008DC877 /* PBXContainerItemProxy */;
 		};
 		58D2D30123BA2FE5008DC877 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 58D2D2DE23BA2FE4008DC877 /* OLOidc-tester */;
+			target = 58D2D2DE23BA2FE4008DC877 /* ios-oidc-swift-tester */;
 			targetProxy = 58D2D30023BA2FE5008DC877 /* PBXContainerItemProxy */;
 		};
 		58D2D3AD23BA7C74008DC877 /* PBXTargetDependency */ = {
@@ -1179,13 +1194,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2YX6A8Z383;
-				INFOPLIST_FILE = "ios-oidc-tester/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ios-oidc-swift-tester/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onelogin.ios-oidc-tester";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ios-oidc-swift-tester";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1197,13 +1212,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2YX6A8Z383;
-				INFOPLIST_FILE = "ios-oidc-tester/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ios-oidc-swift-tester/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onelogin.ios-oidc-tester";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ios-oidc-swift-tester";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1227,7 +1242,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OLOidc-tester.app/OLOidc-tester";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-oidc-swift-tester.app/ios-oidc-swift-tester";
 			};
 			name = Debug;
 		};
@@ -1249,7 +1264,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OLOidc-tester.app/OLOidc-tester";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-oidc-swift-tester.app/ios-oidc-swift-tester";
 			};
 			name = Release;
 		};
@@ -1357,7 +1372,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58D2D30623BA2FE5008DC877 /* Build configuration list for PBXNativeTarget "OLOidc-tester" */ = {
+		58D2D30623BA2FE5008DC877 /* Build configuration list for PBXNativeTarget "ios-oidc-swift-tester" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58D2D30723BA2FE5008DC877 /* Debug */,
