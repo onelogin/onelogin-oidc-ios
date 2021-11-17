@@ -49,6 +49,10 @@ NS_ASSUME_NONNULL_BEGIN
   return self;
 }
 
+- (void)setEphemeralBrowsingSession:(BOOL) ephemeral {
+    // Does nothing - adhering to the protocol
+}
+
 - (BOOL)presentExternalUserAgentRequest:(id<OIDExternalUserAgentRequest>)request
                                 session:(id<OIDExternalUserAgentSession>)session {
   if (_externalUserAgentFlowInProgress) {
