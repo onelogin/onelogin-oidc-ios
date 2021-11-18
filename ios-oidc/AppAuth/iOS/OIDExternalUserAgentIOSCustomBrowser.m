@@ -126,6 +126,10 @@ NS_ASSUME_NONNULL_BEGIN
   return self;
 }
 
+- (void)setEphemeralBrowsingSession:(BOOL) ephemeral {
+    // Does nothing - adhering to the protocol
+}
+
 - (BOOL)presentExternalUserAgentRequest:(nonnull id<OIDExternalUserAgentRequest>)request
                                 session:(nonnull id<OIDExternalUserAgentSession>)session {
   // If the app store URL is set, checks if the app is installed and if not opens the app store.

@@ -40,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation OIDExternalUserAgentIOS {
   UIViewController *_presentingViewController;
 
+  BOOL _ephemeral;
   BOOL _externalUserAgentFlowInProgress;
   __weak id<OIDExternalUserAgentSession> _session;
 #pragma clang diagnostic push
@@ -67,8 +68,13 @@ NS_ASSUME_NONNULL_BEGIN
 #endif // __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
     
     _presentingViewController = presentingViewController;
+    _ephemeral = NO;
   }
   return self;
+}
+
+- (void) setEphemeralBrowsingSession: (BOOL) ephemeral {
+    _ephemeral = ephemeral;
 }
 
 - (BOOL)presentExternalUserAgentRequest:(id<OIDExternalUserAgentRequest>)request
@@ -114,6 +120,7 @@ NS_ASSUME_NONNULL_BEGIN
           authenticationVC.presentationContextProvider = self;
       }
 #endif
+      authenticationVC.prefersEphemeralWebBrowserSession = _ephemeral;
       _webAuthenticationVC = authenticationVC;
       openedUserAgent = [authenticationVC start];
     }
