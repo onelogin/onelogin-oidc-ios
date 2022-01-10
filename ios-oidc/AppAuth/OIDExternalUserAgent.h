@@ -48,6 +48,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)dismissExternalUserAgentAnimated:(BOOL)animated completion:(void (^)(void))completion;
 
+/*! @brief Request that the browser doesn’t share cookies or other browsing data between the authentication session and the user’s normal browser session. Whether the request is honored depends on the user’s default web browser. Safari always honors the request.
+    @param ephemeral Whether or not the browsing session is ephemeral.
+ */
+- (void)setEphemeralBrowsingSession:(BOOL) ephemeral;
+
 @end
 
 NS_ASSUME_NONNULL_END

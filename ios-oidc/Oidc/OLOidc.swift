@@ -18,7 +18,8 @@ public class OLOidc: NSObject {
     @objc public let oidcConfig: OLOidcConfig
     @objc public var olAuthState: OLOidcAuthState
     @objc public var currentAuthorizationFlow: OIDExternalUserAgentSession?
-    
+    @objc public var ephemeralSession: Bool = false
+        
     @objc public init(configuration: OLOidcConfig? = nil, useSecureStorage: Bool = true) throws {
         if let config = configuration {
             oidcConfig = config
@@ -27,6 +28,10 @@ public class OLOidc: NSObject {
             oidcConfig = try OLOidcConfig.standard()
         }
         olAuthState = OLOidcAuthState(oidcConfig: oidcConfig, useSecureStorage: useSecureStorage)
+    }
+    
+    @objc public func setEphemeralSession( ephemeral: Bool ) {
+        ephemeralSession = ephemeral;
     }
     
     @objc public func signIn(presenter: UIViewController, callback: @escaping ((Error?) -> Void)) {
@@ -51,6 +56,7 @@ public class OLOidc: NSObject {
                                                   additionalParameters: self.oidcConfig.additionalParameters)
 
             let externalUserAgent = OIDExternalUserAgentIOS(presenting: presenter)
+            externalUserAgent?.setEphemeralBrowsingSession( self.ephemeralSession )
             self.currentAuthorizationFlow = OIDAuthState.authState(byPresenting: request, externalUserAgent: externalUserAgent!) { (authState, error) in
                 if let authState = authState {
                     self.olAuthState.authState = authState
@@ -61,8 +67,6 @@ public class OLOidc: NSObject {
                 }
             }
         }
-        
-        
     }
 
     @objc public func deleteTokens() {
