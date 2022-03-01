@@ -17,6 +17,8 @@ public enum OLOidcError: Error, Equatable {
     case userEndpointUndeclared
     case fetchingFreshTokenError(String)
     case gettingAccessTokenError
+    case gettingIdTokenError
+    case generatingSignOutUrlError
     case httpRequestFailed(String)
     case nonHttpResponse
     case noResponseData
@@ -46,6 +48,10 @@ extension OLOidcError: LocalizedError {
             return "Error fetching fresh tokens: \(error)"
         case .gettingAccessTokenError:
             return "Error getting accessToken"
+        case .gettingIdTokenError:
+            return "Error getting idToken"
+        case .generatingSignOutUrlError:
+            return "Error generating URL for signing out"
         case .httpRequestFailed(error: let error):
             return "HTTP request failed \(error)"
         case .nonHttpResponse:

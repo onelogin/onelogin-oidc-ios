@@ -86,13 +86,17 @@ public class OLOidc: NSObject {
                 return
             }
 
-            guard let accessToken = accessToken else {
-                callback(false, OLOidcError.gettingAccessTokenError)
+            guard let idToken = idToken else {
+                callback(false, OLOidcError.gettingIdTokenError)
                 return
             }
             
-            var urlRequest = URLRequest(url: signOutEndpoint)
-            urlRequest.allHTTPHeaderFields = ["Authorization":"Bearer \(accessToken)"]
+            guard let url = URL(string: "\(signOutEndpoint.absoluteString)?id_token_hint=\(idToken)") else {
+                callback(false, OLOidcError.generatingSignOutUrlError)
+                return
+            }
+
+            let urlRequest = URLRequest(url: url)
 
             let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
 
