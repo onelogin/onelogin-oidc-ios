@@ -37,6 +37,17 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func btnSignOutClicked(_ sender: Any) {
+        olOidc?.signOut(callback: { success, error in
+            if let error = error {
+                self.setInfoText(text: error.localizedDescription)
+                return
+            }
+            let status = success ? "Sign out is successful" : "Signout failed"
+            self.setInfoText(text: status)
+        })
+    }
+    
     @IBAction func btnIntrospectClicked(_ sender: Any) {
         olOidc?.introspect(callback: { (tokenValid, error) in
             if let error = error {

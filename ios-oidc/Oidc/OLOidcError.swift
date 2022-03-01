@@ -12,6 +12,7 @@ public enum OLOidcError: Error, Equatable {
     case configFileParseFailure
     case configInvalid
     case missingConfiguration
+    case endSessionEndpointUndeclared
     case tokenEndpointUndeclared
     case userEndpointUndeclared
     case fetchingFreshTokenError(String)
@@ -35,6 +36,8 @@ extension OLOidcError: LocalizedError {
             return "No configuration was provided to OLOidc."
         case .configInvalid:
             return "The config file contains invalid parameters."
+        case .endSessionEndpointUndeclared:
+            return "End session endpoint not declared in discovery document."
         case .tokenEndpointUndeclared:
             return "Token endpoint not declared in discovery document."
         case .userEndpointUndeclared:

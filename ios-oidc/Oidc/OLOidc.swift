@@ -73,6 +73,82 @@ public class OLOidc: NSObject {
         olAuthState.authState = nil
     }
     
+    @objc public func signOut(callback: @escaping ((Bool, Error?) -> Void)) {
+        guard let signOutEndpoint = self.olAuthState.endSessionEndpoint else {
+            callback(false, OLOidcError.endSessionEndpointUndeclared)
+            return
+        }
+        
+        self.olAuthState.authState?.performAction() { (accessToken, idToken, error) in
+
+            if error != nil  {
+                callback(false, OLOidcError.fetchingFreshTokenError(error?.localizedDescription ?? "Unknown error"))
+                return
+            }
+
+            guard let accessToken = accessToken else {
+                callback(false, OLOidcError.gettingAccessTokenError)
+                return
+            }
+            
+            var urlRequest = URLRequest(url: signOutEndpoint)
+            urlRequest.allHTTPHeaderFields = ["Authorization":"Bearer \(accessToken)"]
+
+            let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+
+                DispatchQueue.main.async {
+                    
+                    guard error == nil else {
+                        callback(false, OLOidcError.httpRequestFailed(error?.localizedDescription ?? "Unknown error"))
+                        return
+                    }
+
+                    guard let response = response as? HTTPURLResponse else {
+                        callback(false, OLOidcError.nonHttpResponse)
+                        return
+                    }
+
+                    if response.statusCode != 302 {
+                        guard let data = data else {
+                            callback(false, OLOidcError.noResponseData)
+                            return
+                        }
+                        
+                        var json: [AnyHashable: Any]?
+
+                        do {
+                            json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                        } catch {
+                            callback(false, OLOidcError.jsonSerializationError)
+                            return
+                        }
+                        
+                        // server replied with an error
+                        let responseText: String? = String(data: data, encoding: String.Encoding.utf8)
+
+                        if response.statusCode == 401 {
+                            // "401 Unauthorized" generally indicates there is an issue with the authorization
+                            // grant. Puts OIDAuthState into an error state.
+                            let oauthError = OIDErrorUtilities.resourceServerAuthorizationError(withCode: 0,
+                                                                                                errorResponse: json,
+                                                                                                underlyingError: error)
+                            self.olAuthState.authState?.update(withAuthorizationError: oauthError)
+                            callback(false, OLOidcError.authorizationError("(\(oauthError)). Response: \(responseText ?? "RESPONSE_TEXT")"))
+                        } else {
+                            callback(false, OLOidcError.authorizationError("(\(response.statusCode)). Response: \(responseText ?? "RESPONSE_TEXT")"))
+                        }
+
+                        return
+                    }
+                    
+                    callback(true, nil)
+                }
+            }
+            
+            task.resume()
+        }
+    }
+    
     @objc public func revokeToken(tokenType: TokenType, callback: @escaping ((Error?) -> Void)) {
         guard let tokenEndpoint = self.olAuthState.tokenEndpoint else {
             callback(OLOidcError.tokenEndpointUndeclared)
