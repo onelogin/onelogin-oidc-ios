@@ -13,6 +13,19 @@ import Foundation
     case RefreshToken = 1
 }
 
+private class RedirectDelegate: NSObject, URLSessionTaskDelegate {
+    func urlSession(
+        _: URLSession,
+        task: URLSessionTask,
+        willPerformHTTPRedirection: HTTPURLResponse,
+        newRequest: URLRequest,
+        completionHandler: (URLRequest?) -> Void
+    ) {
+        // Stops the redirection, and returns (internally) the response body.
+        completionHandler(nil)
+    }
+}
+
 public class OLOidc: NSObject {
     
     @objc public let oidcConfig: OLOidcConfig
@@ -91,15 +104,15 @@ public class OLOidc: NSObject {
                 return
             }
             
+            // guard let url = URL(string: "\(signOutEndpoint.absoluteString)?post_logout_redirect_uri=https://vestey-dev.onelogin-shadow01.com&id_token_hint=\(idToken)")
             guard let url = URL(string: "\(signOutEndpoint.absoluteString)?id_token_hint=\(idToken)") else {
                 callback(false, OLOidcError.generatingSignOutUrlError)
                 return
             }
-
+            
+            let session = URLSession(configuration: URLSessionConfiguration.default, delegate: RedirectDelegate(), delegateQueue: nil)
             let urlRequest = URLRequest(url: url)
-
-            let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-
+            let task = session.dataTask(with: urlRequest) { data, response, error in
                 DispatchQueue.main.async {
                     
                     guard error == nil else {
@@ -112,7 +125,7 @@ public class OLOidc: NSObject {
                         return
                     }
 
-                    if response.statusCode != 302 {
+                    if response.statusCode > 302 {
                         guard let data = data else {
                             callback(false, OLOidcError.noResponseData)
                             return
