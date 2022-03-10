@@ -38,14 +38,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnSignOutClicked(_ sender: Any) {
-        olOidc?.signOut(callback: { success, error in
+        olOidc?.signOut(presenter: self) { error in
             if let error = error {
                 self.setInfoText(text: error.localizedDescription)
                 return
             }
-            let status = success ? "Sign out is successful" : "Signout failed"
-            self.setInfoText(text: status)
-        })
+            self.setInfoText(text: "Sign out is successful")
+        }
     }
     
     @IBAction func btnIntrospectClicked(_ sender: Any) {

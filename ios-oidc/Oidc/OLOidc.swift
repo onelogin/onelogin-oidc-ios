@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import WebKit
+import SafariServices
 
 @objc public enum TokenType: Int {
     case AccessToken = 0
@@ -23,6 +25,12 @@ private class RedirectDelegate: NSObject, URLSessionTaskDelegate {
     ) {
         // Stops the redirection, and returns (internally) the response body.
         completionHandler(nil)
+    }
+}
+
+private class CloseSafariOnOpen: NSObject, SFSafariViewControllerDelegate {
+    public func safariViewController(_ controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool) {
+        controller.dismiss(animated: false)
     }
 }
 
@@ -85,84 +93,43 @@ public class OLOidc: NSObject {
     @objc public func deleteTokens() {
         olAuthState.authState = nil
     }
-    
-    @objc public func signOut(callback: @escaping ((Bool, Error?) -> Void)) {
-        guard let signOutEndpoint = self.olAuthState.endSessionEndpoint else {
-            callback(false, OLOidcError.endSessionEndpointUndeclared)
-            return
-        }
-        
-        self.olAuthState.authState?.performAction() { (accessToken, idToken, error) in
 
+    @objc public func signOut(presenter: UIViewController, callback: @escaping ((Error?) -> Void)) {
+        self.olAuthState.authState?.performAction() { (accessToken, idToken, error) in
             if error != nil  {
-                callback(false, OLOidcError.fetchingFreshTokenError(error?.localizedDescription ?? "Unknown error"))
+                callback(OLOidcError.fetchingFreshTokenError(error?.localizedDescription ?? "Unknown error"))
                 return
             }
 
             guard let idToken = idToken else {
-                callback(false, OLOidcError.gettingIdTokenError)
+                callback(OLOidcError.gettingIdTokenError)
                 return
             }
-            
-            // guard let url = URL(string: "\(signOutEndpoint.absoluteString)?post_logout_redirect_uri=https://vestey-dev.onelogin-shadow01.com&id_token_hint=\(idToken)")
-            guard let url = URL(string: "\(signOutEndpoint.absoluteString)?id_token_hint=\(idToken)") else {
-                callback(false, OLOidcError.generatingSignOutUrlError)
-                return
-            }
-            
-            let session = URLSession(configuration: URLSessionConfiguration.default, delegate: RedirectDelegate(), delegateQueue: nil)
-            let urlRequest = URLRequest(url: url)
-            let task = session.dataTask(with: urlRequest) { data, response, error in
-                DispatchQueue.main.async {
-                    
-                    guard error == nil else {
-                        callback(false, OLOidcError.httpRequestFailed(error?.localizedDescription ?? "Unknown error"))
-                        return
+
+            let issuer = URL(string: self.oidcConfig.issuer)!
+            OIDAuthorizationService.discoverConfiguration(forIssuer: issuer) { configuration, error in
+                guard configuration != nil else {
+                    print("Error retrieving discovery document: \(error?.localizedDescription ?? "Unknown error")")
+                        callback(error)
+                    return
+                  }
+
+                let redirect = "https://\(issuer.host ?? "onelogin.com")/logout"
+                let request = OIDEndSessionRequest(
+                    configuration: configuration!,
+                    idTokenHint: idToken,
+                    postLogoutRedirectURL: URL(string: redirect)!,
+                    additionalParameters: nil
+                )
+
+                let externalUserAgent = OIDExternalUserAgentIOS(presenting: presenter)
+                externalUserAgent?.setEphemeralBrowsingSession( self.ephemeralSession )
+                self.currentAuthorizationFlow = OIDAuthorizationService.present(request, externalUserAgent: externalUserAgent!) { response, error in
+                    if error != nil {
+                        callback(error)
                     }
-
-                    guard let response = response as? HTTPURLResponse else {
-                        callback(false, OLOidcError.nonHttpResponse)
-                        return
-                    }
-
-                    if response.statusCode > 302 {
-                        guard let data = data else {
-                            callback(false, OLOidcError.noResponseData)
-                            return
-                        }
-                        
-                        var json: [AnyHashable: Any]?
-
-                        do {
-                            json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                        } catch {
-                            callback(false, OLOidcError.jsonSerializationError)
-                            return
-                        }
-                        
-                        // server replied with an error
-                        let responseText: String? = String(data: data, encoding: String.Encoding.utf8)
-
-                        if response.statusCode == 401 {
-                            // "401 Unauthorized" generally indicates there is an issue with the authorization
-                            // grant. Puts OIDAuthState into an error state.
-                            let oauthError = OIDErrorUtilities.resourceServerAuthorizationError(withCode: 0,
-                                                                                                errorResponse: json,
-                                                                                                underlyingError: error)
-                            self.olAuthState.authState?.update(withAuthorizationError: oauthError)
-                            callback(false, OLOidcError.authorizationError("(\(oauthError)). Response: \(responseText ?? "RESPONSE_TEXT")"))
-                        } else {
-                            callback(false, OLOidcError.authorizationError("(\(response.statusCode)). Response: \(responseText ?? "RESPONSE_TEXT")"))
-                        }
-
-                        return
-                    }
-                    
-                    callback(true, nil)
                 }
             }
-            
-            task.resume()
         }
     }
     
