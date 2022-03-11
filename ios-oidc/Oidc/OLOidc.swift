@@ -93,20 +93,17 @@ public class OLOidc: NSObject {
                     return
                   }
 
-                let redirect = "https://\(issuer.host ?? "onelogin.com")/logout"
                 let request = OIDEndSessionRequest(
                     configuration: configuration!,
                     idTokenHint: idToken,
-                    postLogoutRedirectURL: URL(string: redirect)!,
+                    postLogoutRedirectURL: self.oidcConfig.redirectUri,
                     additionalParameters: nil
                 )
 
                 let externalUserAgent = OIDExternalUserAgentIOS(presenting: presenter)
                 externalUserAgent?.setEphemeralBrowsingSession( self.ephemeralSession )
                 self.currentAuthorizationFlow = OIDAuthorizationService.present(request, externalUserAgent: externalUserAgent!) { response, error in
-                    if error != nil {
-                        callback(error)
-                    }
+                    callback(error)
                 }
             }
         }
