@@ -7,31 +7,10 @@
 //
 
 import Foundation
-import WebKit
-import SafariServices
 
 @objc public enum TokenType: Int {
     case AccessToken = 0
     case RefreshToken = 1
-}
-
-private class RedirectDelegate: NSObject, URLSessionTaskDelegate {
-    func urlSession(
-        _: URLSession,
-        task: URLSessionTask,
-        willPerformHTTPRedirection: HTTPURLResponse,
-        newRequest: URLRequest,
-        completionHandler: (URLRequest?) -> Void
-    ) {
-        // Stops the redirection, and returns (internally) the response body.
-        completionHandler(nil)
-    }
-}
-
-private class CloseSafariOnOpen: NSObject, SFSafariViewControllerDelegate {
-    public func safariViewController(_ controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool) {
-        controller.dismiss(animated: false)
-    }
 }
 
 public class OLOidc: NSObject {

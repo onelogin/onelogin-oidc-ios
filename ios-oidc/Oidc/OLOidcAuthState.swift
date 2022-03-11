@@ -32,9 +32,6 @@ open class OLOidcAuthState: NSObject {
     @objc open var refreshToken: String? {
         get {return authState?.lastTokenResponse?.refreshToken}
     }
-    @objc open var endSessionEndpoint: URL? {
-        get {return authState?.lastAuthorizationResponse.request.configuration.discoveryDocument?.endSessionEndpoint}
-    }
     @objc open var tokenEndpoint: URL? {
         get {return authState?.lastAuthorizationResponse.request.configuration.discoveryDocument?.tokenEndpoint}
     }
