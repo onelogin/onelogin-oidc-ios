@@ -72,6 +72,42 @@ public class OLOidc: NSObject {
     @objc public func deleteTokens() {
         olAuthState.authState = nil
     }
+
+    @objc public func signOut(presenter: UIViewController, callback: @escaping ((Error?) -> Void)) {
+        self.olAuthState.authState?.performAction() { (accessToken, idToken, error) in
+            if error != nil  {
+                callback(OLOidcError.fetchingFreshTokenError(error?.localizedDescription ?? "Unknown error"))
+                return
+            }
+
+            guard let idToken = idToken else {
+                callback(OLOidcError.gettingIdTokenError)
+                return
+            }
+
+            let issuer = URL(string: self.oidcConfig.issuer)!
+            OIDAuthorizationService.discoverConfiguration(forIssuer: issuer) { configuration, error in
+                guard configuration != nil else {
+                    print("Error retrieving discovery document: \(error?.localizedDescription ?? "Unknown error")")
+                        callback(error)
+                    return
+                  }
+
+                let request = OIDEndSessionRequest(
+                    configuration: configuration!,
+                    idTokenHint: idToken,
+                    postLogoutRedirectURL: self.oidcConfig.redirectUri,
+                    additionalParameters: nil
+                )
+
+                let externalUserAgent = OIDExternalUserAgentIOS(presenting: presenter)
+                externalUserAgent?.setEphemeralBrowsingSession( self.ephemeralSession )
+                self.currentAuthorizationFlow = OIDAuthorizationService.present(request, externalUserAgent: externalUserAgent!) { response, error in
+                    callback(error)
+                }
+            }
+        }
+    }
     
     @objc public func revokeToken(tokenType: TokenType, callback: @escaping ((Error?) -> Void)) {
         guard let tokenEndpoint = self.olAuthState.tokenEndpoint else {
